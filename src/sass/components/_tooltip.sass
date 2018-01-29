@@ -1,0 +1,40 @@
+.tooltip
+	position: relative
+	z-index: 99
+	padding: 8px 80px 8px 20px
+	color: rgba($white, 0.5)
+	+f(16px,400,1.5) 
+	letter-spacing: 0 
+	width: 641px
+	text-align: left
+	border-radius: 4px
+	background-color: rgba($black, 0.5)
+	display: inline-block
+	+sm
+		padding-right: 56px
+		font-size: 11px
+		width: calc(100% - 40px)
+	a
+		color: inherit
+		border-bottom: 1px solid
+		transition: border-color .3s
+		+hover
+			border-color: transparent 
+	p
+		+sm
+			display: inline
+	&__close
+		position: absolute
+		top: 50%
+		right: 31px
+		color: rgba($white, 0.5)
+		margin-top: -9px
+		font-size: 19px 
+		transition: color .3s
+		background-color: transparent
+		+sm
+			right: 25px
+			margin-top: -7px 
+			font-size: 14px
+		+hover
+			color: $white 

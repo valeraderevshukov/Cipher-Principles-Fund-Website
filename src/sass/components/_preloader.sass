@@ -1,0 +1,36 @@
+.preloader
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 400
+	background-image: linear-gradient(151deg, #2D3353 8%, #3E3E88 100%)
+	+vertical
+	&__gragient
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-image: linear-gradient(138deg,#2d3353 9%,#3e3e88 70%)
+	&__inner
+		position: relative
+		vertical-align: middle
+		display: inline-block
+
+[data-preloader-group] polygon,
+[data-preloader-group] path
+	opacity: 0
+	&.is-active
+		opacity: 1
+		
+.progress
+	position: absolute
+	left: 0
+	bottom: 0
+	right: 0
+	&__inner
+		height: 15px
+		width: 0
+		background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%)
