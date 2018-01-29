@@ -1,0 +1,30 @@
+<!-- begin sticky-nav -->
+<div class="sticky-nav js-sticky-sidebar">
+	<div class="sticky-nav__inner">
+		<div class="sticky-nav__container">
+			<div class="label sticky-nav__label">About the fund</div>
+			<div class="sticky-nav__line" data-line></div>
+			<ul class="sticky-nav__list">
+				{% for item in [
+					{
+						target: 'what',
+						title: 'What we do'
+					},
+					{
+						target: 'how',
+						title: 'How we do it'
+					},
+					{
+						target: 'why',
+						title: 'Why we do it'
+					}
+				] %}
+					<li class="sticky-nav__item">
+						<a href="#" data-href="{{item.target}}" class="sticky-nav__link">{{item.title}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- end sticky-nav -->

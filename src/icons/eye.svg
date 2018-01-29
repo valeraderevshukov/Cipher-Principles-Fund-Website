@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="28px" viewBox="0 0 48 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>eye</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1266.000000, -1783.000000)" opacity="0.600000024">
+        <g id="iconmonstr-eye-7" transform="translate(1266.000000, 1783.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="eye">
+                <path d="M24.03,4 C33.532,4 40.156,10.024 43.038,13.272 C40.236,16.946 33.612,24 24.03,24 C15.19,24 8.17,16.928 5.074,13.186 C8.06,9.892 14.708,4 24.03,4 Z M24.03,0 C8.892,0 0,13.102 0,13.102 C0,13.102 9.67,28 24.03,28 C39.496,28 48,13.102 48,13.102 C48,13.102 39.418,0 24.03,0 Z M24,14 L17.28,9.658 C16.47,10.908 16,12.4 16,14 C16,18.418 19.582,22 24,22 C28.418,22 32,18.418 32,14 C32,9.582 28.418,6 24,6 C22.516,6 21.124,6.404 19.934,7.108 L24,14 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

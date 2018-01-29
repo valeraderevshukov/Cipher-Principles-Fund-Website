@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="36px" viewBox="0 0 30 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>coins</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-423.000000, -1775.000000)" opacity="0.600000024">
+        <g id="Group-4" transform="translate(423.000000, 1775.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="iconmonstr-coin-8">
+                <g id="coins">
+                    <path d="M15,13.5 C23.0175,13.5 30,10.4775 30,6.75 C30,3.0225 23.0175,0 15,0 C6.984,0 0,3.0225 0,6.75 C0,10.4775 6.984,13.5 15,13.5 Z M15,31.5 C20.6745,31.5 26.562,30.0465 30,27.2955 L30,29.25 C30,32.9775 23.0175,36 15,36 C6.984,36 0,32.9775 0,29.25 L0,27.294 C3.438,30.0465 9.3255,31.5 15,31.5 Z M15,16.5 C20.6745,16.5 26.562,15.0465 30,12.2955 L30,14.25 C30,17.9775 23.0175,21 15,21 C6.984,21 0,17.9775 0,14.25 L0,12.2955 C3.438,15.0465 9.3255,16.5 15,16.5 Z M15,24 C20.6745,24 26.562,22.5465 30,19.7955 L30,21.75 C30,25.4775 23.0175,28.5 15,28.5 C6.984,28.5 0,25.4775 0,21.75 L0,19.794 C3.438,22.5465 9.3255,24 15,24 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

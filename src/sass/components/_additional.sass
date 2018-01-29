@@ -1,0 +1,32 @@
+.additional
+	&__link
+		position: relative
+		display: inline-block
+		vertical-align: top
+		color: $link
+		+f(18px, 400, 24px)
+		letter-spacing: -0.5px
+		.icon 
+			position: absolute
+			top: 50%
+			left: 0
+			fill: currentColor
+			font-size: 7px
+			transform: translate3d(0,-50%,0)
+			+ span 
+				display: block
+				padding-left: 27px
+	&__row 
+		padding: 24px 0 43px
+		margin: 0 -20px 
+		font-size: 0
+	&__col 
+		display: inline-block
+		vertical-align: top
+		padding: 10px 20px
+		width: 33.33%
+		color: #4C4C4C
+		+f(16px, 400, 28px)
+	&__btn 
+		width: 100%
+		max-width: 220px
