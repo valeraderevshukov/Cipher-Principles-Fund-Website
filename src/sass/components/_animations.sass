@@ -1,0 +1,41 @@
+// [data-stagger="rows"]
+[data-stagger="wrap"]
+	.is-split &
+		overflow: hidden
+		display: block
+	&.is-clear-transform
+		overflow: initial
+		display: initial
+[data-stagger="inner"]
+	.is-split &
+		position: relative
+		transform: translateY(100%)
+		opacity: 0
+		display: block
+	&.is-clear-transform
+		position: initial
+		transform: initial
+		opacity: initial
+		display: initial
+		
+[data-anim-from]
+	position: relative
+	opacity: 0
+	&.is-clear-transform
+		transform: initial
+		opacity: initial
+[data-anim-from="top"]
+	transform: translateY(-50px)
+[data-anim-from="top-10"]
+	transform: translateY(-10px)
+[data-anim-from="left"]
+	transform: translateX(-50px)
+[data-anim-from="right-20"]
+	transform: translateX(20px)
+	
+[data-anim-page="full"]
+	position: relative
+	transform: translateY(100vh)
+	&.is-clear-transform
+		transform: initial
+
