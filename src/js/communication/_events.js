@@ -1,0 +1,3 @@
+export default {
+  TOPIC_ANIM_COMPLATE: 'TOPIC_ANIM_COMPLATE'
+};

@@ -1,0 +1,72 @@
+//FONTS
+=fontpath($name, $name1, $file)
+	src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
+=fontdefault($style, $weight, $name)
+	font-family: $name
+	font-style: $style
+	font-weight: $weight
+
+//START GraphikLCG
+@font-face
+	+fontdefault(normal, 900, 'GraphikLCG')
+	+fontpath('GraphikLCG Super', 'GraphikLCG-Super', GraphikLCG-Super)
+@font-face
+	+fontdefault(italic, 900, 'GraphikLCG')
+	+fontpath('GraphikLCG Super Italic', 'GraphikLCG-SuperItalic', GraphikLCG-SuperItalic)
+	
+@font-face
+	+fontdefault(normal, 800, 'GraphikLCG')
+	+fontpath('GraphikLCG Black', 'GraphikLCG-Black', GraphikLCG-Black)
+@font-face
+	+fontdefault(italic, 800, 'GraphikLCG')
+	+fontpath('GraphikLCG Black Italic', 'GraphikLCG-BlackItalic', GraphikLCG-BlackItalic)
+	
+@font-face
+	+fontdefault(normal, 700, 'GraphikLCG')
+	+fontpath('GraphikLCG Bold', 'GraphikLCG-Bold', GraphikLCG-Bold)
+@font-face
+	+fontdefault(italic, 700, 'GraphikLCG')
+	+fontpath('GraphikLCG Bold Italic', 'GraphikLCG-BoldItalic', GraphikLCG-BoldItalic)
+	
+@font-face
+	+fontdefault(normal, 600, 'GraphikLCG')
+	+fontpath('GraphikLCG Semibold', 'GraphikLCG-Semibold', GraphikLCG-Semibold)
+@font-face
+	+fontdefault(italic, 600, 'GraphikLCG')
+	+fontpath('GraphikLCG Semibold Italic', 'GraphikLCG-SemiboldItalic', GraphikLCG-SemiboldItalic)
+
+@font-face
+	+fontdefault(normal, 500, 'GraphikLCG')
+	+fontpath('GraphikLCG Medium', 'GraphikLCG-Medium', GraphikLCG-Medium)
+@font-face
+	+fontdefault(italic, 500, 'GraphikLCG')
+	+fontpath('GraphikLCG Medium Italic', 'GraphikLCG-MediumItalic', GraphikLCG-MediumItalic)
+	
+@font-face
+	+fontdefault(normal, 400, 'GraphikLCG')
+	+fontpath('GraphikLCG Regular', 'GraphikLCG-Regular', GraphikLCG-Regular)
+@font-face
+	+fontdefault(italic, 400, 'GraphikLCG')
+	+fontpath('GraphikLCG Regular Italic', 'GraphikLCG-RegularItalic', GraphikLCG-RegularItalic)
+	
+@font-face
+	+fontdefault(normal, 300, 'GraphikLCG')
+	+fontpath('GraphikLCG Light', 'GraphikLCG-Light', GraphikLCG-Light)
+@font-face
+	+fontdefault(italic, 300, 'GraphikLCG')
+	+fontpath('GraphikLCG Light Italic', 'GraphikLCG-LightItalic', GraphikLCG-LightItalic)
+	
+@font-face
+	+fontdefault(normal, 200, 'GraphikLCG')
+	+fontpath('GraphikLCG Extra light', 'GraphikLCG-Extralight', GraphikLCG-Extralight)
+@font-face
+	+fontdefault(italic, 200, 'GraphikLCG')
+	+fontpath('GraphikLCG Extra-light Italic', 'GraphikLCG-ExtralightItalic', GraphikLCG-ExtralightItalic)
+	
+@font-face
+	+fontdefault(normal, 100, 'GraphikLCG')
+	+fontpath('GraphikLCG Thin', 'GraphikLCG-Thin', GraphikLCG-Thin)
+@font-face
+	+fontdefault(italic, 100, 'GraphikLCG')
+	+fontpath('GraphikLCG Thin Italic', 'GraphikLCG Thin Italic', GraphikLCG-ThinItalic)
+	
