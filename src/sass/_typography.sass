@@ -1,0 +1,74 @@
+.title-xl
+	+f(120px, 700, 1.084)
+	letter-spacing: -4px
+	+sm 
+		+f(60px, null, 1.216)
+		letter-spacing: -2px
+
+.title-lg
+	+f(80px, 700, 1.14)
+	letter-spacing: -1px
+	&_simple
+		line-height: 1
+	+lg
+		+f(60px, null, 1.13)
+	+sm 
+		+f(40px, null, 1.125)
+	+r(374)
+		font-size: 36px 
+
+.title-md
+	+f(32px, 700, 1.1875)
+	+sm
+		+f(28px, null, 1.214)
+
+.label
+	color: #626262
+	+f(16px, 400, 24px)
+	+sm 
+		font-size: 13px
+
+.article
+	color: $dark
+	.title-xl 
+		padding-bottom: 60px
+		+sm 
+			padding-bottom: 28px
+	.title-md 
+		padding-top: 60px
+		padding-bottom: 20px
+		+sm 
+			padding-top: 26px
+			padding-bottom: 20px
+	p, 
+	li
+		padding-top: 20px
+		padding-bottom: 20px
+		+f(18px, 400, 1.555)
+		+sm 
+			padding-top: 14px
+			padding-bottom: 14px
+	ol
+		list-style-type: decimal 
+		list-style-position: outside
+		padding-left: 20px
+		li
+			padding-left: 10px
+	ul 
+		li 
+			position: relative
+			padding-left: 30px
+			+sm 
+				padding-left: 40px
+			&:before
+				content: ''
+				position: absolute
+				top: 29px
+				left: 0
+				border-radius: 50%
+				width: 8px
+				height: 8px
+				background: $dark
+				+sm 
+					top: 23px
+					left: 7px

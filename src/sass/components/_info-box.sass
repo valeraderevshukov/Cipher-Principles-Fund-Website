@@ -1,0 +1,43 @@
+.info-box
+	padding: 81px 0 56px
+	border-top: 1px solid #D4D4D4
+	color: $dark
+	+lg 
+		padding: 40px 0
+	+sm 
+		padding: 34px 0
+		border-top: none
+	&__icon
+		margin-bottom: 44px
+		height: 36px
+		+vertical
+		text-align: left
+		+lg 
+			margin-bottom: 30px
+		+sm 
+			margin-bottom: 38px
+			height: auto
+		.icon 
+			display: inline-block
+			vertical-align: bottom
+			fill: $black
+			opacity: 0.6
+			+sm 
+				vertical-align: top
+		.icon-coins
+			font-size: 36px
+		.icon-cogs
+			font-size: 34px
+		.icon-eye
+			font-size: 28px
+	&__title
+		margin-bottom: 26px
+		max-width: 300px
+		+sm 
+			margin-bottom: 37px
+	&__description
+		+f(18px, 400, 28px)
+		+lg
+			+f(16px, null, 1.555)
+		+sm 
+			+f(14, null, 21px)

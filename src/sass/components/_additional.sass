@@ -1,0 +1,56 @@
+.additional
+	&__link
+		position: relative
+		display: inline-block
+		vertical-align: top
+		color: $link
+		+f(18px, 400, 24px)
+		letter-spacing: -0.5px
+		+sm 
+			font-size: 14px
+		.icon 
+			position: absolute
+			top: 50%
+			left: 0
+			fill: currentColor
+			font-size: 7px
+			// transform: translate3d(0,-50%,0) rotate(-90deg)
+			transform: translate3d(0,-50%,0)
+			transition: transform 0.25s
+			+sm 
+				font-size: 5px
+			+ span 
+				display: block
+				padding-left: 27px
+				+sm 
+					padding-left: 19px
+	// &__container
+		// display: none
+	&__row 
+		padding: 24px 0 43px
+		margin: 0 -20px 
+		font-size: 0
+		+lg 
+			padding: 10px 0 20px
+			margin: 0 -10px
+		+sm
+			margin: 0
+	&__col 
+		display: inline-block
+		vertical-align: top
+		padding: 10px 20px
+		width: 33.33%
+		color: #4C4C4C
+		+f(16px, 400, 1.75)
+		+lg 
+			padding: 10px
+			width: 50%
+			font-size: 14px
+		+sm 
+			padding: 10px 0
+			width: 100%
+	&__btn 
+		width: 100%
+		max-width: 220px
+		+sm 
+			max-width: 180px

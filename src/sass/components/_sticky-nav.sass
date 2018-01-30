@@ -1,0 +1,35 @@
+.sticky-nav 
+	position: absolute !important
+	top: 0
+	left: 0
+	width: 305px
+	+md 
+		display: none
+	&__inner 
+		position: relative
+		+gpu
+	&__container
+		padding: 36px 39px 42px 
+		background: $lightGray
+	&__label
+		margin-bottom: 22px
+	&__link
+		color: #D4D4D4
+		+f(28px, 700, 2)
+		cursor: pointer
+		transition: color 0.25s
+		&.is-active
+			color: $green
+		+hover
+			color: $green
+	&__line 
+		position: absolute
+		top: 0
+		right: 0
+		border-right: 5px solid $green
+		height: 26px
+		// opacity: 0
+		+gpu
+		transition: opacity 0.25s, transform 0.25s
+		&[data-state="true"]
+			opacity: 1
