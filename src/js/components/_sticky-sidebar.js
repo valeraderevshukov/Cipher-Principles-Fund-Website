@@ -89,7 +89,8 @@ export default {
   
     new StickySidebar('.js-sticky-sidebar', {
       topSpacing: 140,
-      bottomSpacing: 20
+      bottomSpacing: 20,
+      containerSelector: '.js-sticky-wrapper'
     });
     
     sticky.addEventListener('affix.top.stickySidebar', () => this.toggleLine(true));

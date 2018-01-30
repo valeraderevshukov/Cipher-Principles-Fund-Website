@@ -1,5 +1,5 @@
 <!-- begin scenario -->
-<div class="scenario">
+<div class="scenario" data-section="how">
 	{% for item in [
 		{
 			img: 'scenario-1.jpg',
@@ -23,11 +23,11 @@
 		<div class="scenario__item">
 			<div class="scenario__img" style="background-image: url(img/{{item.img}});"></div>
 			<div class="scenario__content">
-				<div class="scenario__header">
+				<div class="scenario__header js-rellax">
 					<div class="label scenario__label">{{item.label}}</div>
 					<h2 class="title-lg title-lg_simple scenario__title">{{item.title}}</h2>
 				</div>
-				<div class="scenario__description">
+				<div class="scenario__description js-rellax">
 					<p>{{item.description}}</p>
 				</div>
 			</div>

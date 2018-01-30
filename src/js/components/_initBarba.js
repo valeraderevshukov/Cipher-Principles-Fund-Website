@@ -6,6 +6,9 @@ import sections from './_sections';
 import Preloader from './_preloader';
 import initSplitRws from './_splitTextIntoRows';
 
+import EVENT from './../communication/_events';
+import OBSERVER from './../communication/_observer';
+
 DOC.ready(() => {
   const pageContact = 'contact';
   const topic = '.js-topic';
@@ -21,9 +24,11 @@ DOC.ready(() => {
   } );
 
   stickySidebar.init();
-  sections.init();
+  OBSERVER.SUB(EVENT.TOPIC_ANIM_COMPLATE, () => {
+    sections.show();
+    sections.parallaxInit();
+  });
   preloader.init();
-  // setTimeout(sections.show, 5000);
   initSplitRws();
   
 });

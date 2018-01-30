@@ -1,0 +1,169 @@
+.footer
+	position: relative
+	z-index: 100
+	overflow: hidden
+	padding-top: 90px
+	color: $white
+	background: $blue
+	&_home
+		padding-top: 282px
+		+xl 
+			padding-top: 120px
+		+sm 
+			padding-top: 29px
+		.footer 
+			&__container
+				padding: 40px 40px 48px
+				margin: 0 auto
+				max-width: 1680px
+				+xl 
+					padding-left: 20px
+					padding-right: 20px
+				+sm 
+					padding-bottom: 20px
+			&__inner 
+				position: relative
+				margin-left: 380px
+				+xl 
+					margin-left: 340px
+				+md 
+					margin-left: 0
+	&_default
+		+sm 
+			padding-top: 45px
+		.footer
+			&__container
+				padding-bottom: 20px
+			&__top
+				min-height: 451px
+				+lg 
+					min-height: 1px
+			&__title 
+				margin-bottom: 56px
+				+sm 
+					margin-bottom: 37px
+			&__btn 
+				margin-bottom: 50px
+				+sm 
+					margin-bottom: 90px
+			&__inner
+				padding: 0 60px 0 20px
+				max-width: 880px
+				+sm
+					padding: 0 20px
+	&_md 
+		padding-top: 78px
+		+sm
+			padding-top: 45px
+		.footer
+			&__container
+				padding-bottom: 50px
+				+sm 
+					padding-bottom: 20px
+			&__title 
+				margin-right: -151px
+				margin-bottom: 43px
+				+lg 
+					margin-right: 0
+				+sm 
+					margin-bottom: 29px
+			&__btn 
+				+sm 
+					margin-bottom: 121px
+			&__top
+				min-height: 599px
+				+lg
+					min-height: 1px
+			&__inner
+				padding: 0 60px 0 20px
+				max-width: 880px
+				+sm
+					padding: 0 20px
+	&__inner 
+		margin: 0 auto
+		max-width: 800px
+	&__label
+		margin-bottom: 34px
+		color: inherit
+		+sm 
+			margin-bottom: 15px
+	&__title
+		margin-right: -50%
+		margin-bottom: 63px
+		+xl 
+			margin-right: 0
+		+sm 
+			margin-bottom: 37px
+	&__btn
+		margin-bottom: 163px
+		+sm 
+			margin-bottom: 139px
+	&__description
+		padding-bottom: 19px
+		+sm 
+			margin-right: -9px
+		p 
+			margin-bottom: 34px
+			+f(24px, null, 34px)
+			+sm 
+				margin-bottom: 28px
+				+f(14px, null, 21px)
+	&__logo
+		display: inline-block
+		vertical-align: top
+		margin-bottom: 14px
+		color: inherit
+		font-size: 0
+		+sm 
+			margin-bottom: 19px
+		span 
+			display: block
+			padding-bottom: 3px
+			+f(9px, 500, 11px)
+			text-transform: uppercase
+		img 
+			height: 12px
+	&__info 
+		+f(12px, null, 18px)
+	&__bottom
+		padding: 16px 40px
+		border-top: 1px solid rgba($white, 0.2)
+		font-size: 0
+		+clr
+		+lg 
+			padding-left: 20px
+			padding-right: 20px
+		li 
+			display: inline-block
+			vertical-align: bottom
+			+f(12px, null, 14px)
+			+sm
+				+f(9px, null, 2)
+			&:not(:last-child)
+				margin-right: 24px
+				+sm 
+					margin-right: 0
+		a 
+			color: inherit
+			+hover 
+				text-decoration: underline
+		strong
+			+f(14px, null, 17px)
+			+sm 
+				+f(12px, null, 14px)
+	&__meta
+		float: left
+		+md
+			width: 60%
+		li
+			&:not(:first-child) 
+				+md
+					display: none
+	&__nav 
+		float: right
+		text-align: right
+		+md
+			width: 40%
+		li 
+			+sm 
+				display: block
