@@ -1,2 +1,2 @@
-// import './_common';
-// import './components';
+import './_common';
+import './components';

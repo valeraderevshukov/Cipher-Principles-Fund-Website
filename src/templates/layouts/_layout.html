@@ -13,16 +13,17 @@
     <link rel="stylesheet" media="all" href="css/app.css">
     {# {% include "../partials/_media-tags.html" %} #}
   </head>
-  <body>
+  <body{% if bodyClass %} class="{{bodyClass}}"{% endif %} id="barba-wrapper">
 
     <!-- BEGIN content -->
-    <div class="out">
+    <div class="out barba-container" {% if nameSpace %}data-namespace="{{ nameSpace }}"{% endif %}>
       {% block content %}{% endblock %}
     </div>
     <!-- END content -->
 
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgcYl5HcOWZ-fxxOATXFPuUM3Ph0PdTmk&callback=window.initMap"></script>
     <!-- END scripts -->
 
   </body>
