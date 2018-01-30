@@ -1,7 +1,18 @@
 .main
 	padding: 197px 40px 0
-	margin: 100vh auto 0
+	margin: 0 auto
 	max-width: 1680px
+	z-index: 101
+	background-color: $white
+	&:before
+		position: absolute
+		content: "" 
+		top: 0
+		left: 50%
+		width: 100vw
+		margin-left: -50vw
+		height: 100%
+		background-color: $white 
 	+xl 
 		padding-left: 20px
 		padding-right: 20px

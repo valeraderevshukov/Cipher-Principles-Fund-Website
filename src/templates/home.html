@@ -1,10 +1,19 @@
 ---
 title: Home
+bodyClass: is-fixed
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	{{ topic.block() }}
+
+	{{ header.block({
+		class: "anim"
+	}) }}
+	{% include 'partials/home/_preloader.html' %}
+	{{ topic.block({
+		home: true,
+		title: "Research-driven, regulated cryptocurrency investment fund"
+	}) }}
 	{% include 'partials/home/_main.html' %}
 
 {% endblock %}

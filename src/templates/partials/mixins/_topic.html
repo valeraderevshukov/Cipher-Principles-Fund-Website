@@ -1,30 +1,37 @@
 {% import "../_mixins.html" as mixins %}
 {% macro block(props) %}
 	<!-- begin topic -->
-	<div class="topic js-topic">
+	<div class="topic js-topic{% if props.topicClass %} topic_{{ props.topicClass }}{% endif %}">
 		<div class="topic__bg js-topic-bg" data-anim-from="right-20" style="background-image: url(./img/topic-bg.png)"></div>
 		<div class="topic__inner inner">
-			<div class="topic__left js-topic-left" data-anim-from="left">
-				<!-- begin share -->
-				<ul class="topic__share share">
-					<li class="share__item"><a href="#">{{ mixins.icon('in') }}</a></li>
-				</ul>
-				<!-- end share -->
-				<a href="mailto:info@cipherprinciples.com" class="topic__mail mail">info@cipherprinciples.com</a>
-			</div>
-			<div class="topic__wrap js-topic-wrap">
-				<h1 class="topic__title title-lg" data-stagger="rows">Regulated research-driven cryptocurrency market analysis and advice</h1>
-				<div class="topic__footer js-topic-footer" data-anim-from="top-10">
-					<button class="btn js-start-anim-trigger" type="button">{{ mixins.icon('arr-bottom') }} Learn more</button>
+			{% if props.home %}
+				<div class="topic__left js-topic-left" data-anim-from="left">
+					<!-- begin share -->
+					<ul class="topic__share share">
+						<li class="share__item"><a href="#">{{ mixins.icon('in') }}</a></li>
+					</ul>
+					<!-- end share -->
+					<a href="mailto:info@cipherprinciples.com" class="topic__mail mail">info@cipherprinciples.fund</a>
 				</div>
-			</div>
-			<div class="topic__tooltip tooltip js-tooltip">
-				<div class="tooltip__wrap">
-					<p>We use cookies to help improve the experience of using our site. </p>
-					<p><a href="#" target="_blank">Click here to read more</a> or close the box to accept our cookies policy.</p>
+				<div class="topic__wrap js-topic-wrap">
+					<h1 class="topic__title title-lg" data-stagger="rows">{{ props.title }}</h1>
+					<div class="topic__footer js-topic-footer" data-anim-from="top-10">
+						<button class="btn js-start-anim-trigger" type="button">{{ mixins.icon('arr-bottom') }} Learn more</button>
+						<a href="#" class="btn-transparent">Our research</a>
+					</div>
 				</div>
-				<button class="tooltip__close js-tooltip-close">{{ mixins.icon('close') }}</button>
-			</div>
+				<div class="topic__tooltip tooltip js-tooltip">
+					<div class="tooltip__wrap">
+						<p>We use cookies to help improve the experience of using our site. </p>
+						<p><a href="#" target="_blank">Click here to read more</a> or close the box to accept our cookies policy.</p>
+					</div>
+					<button class="tooltip__close js-tooltip-close">{{ mixins.icon('close') }}</button>
+				</div>
+			{% else %}
+				<div class="topic__wrap js-topic-wrap">
+					<h1 class="topic__title title-xl" data-stagger="rows">{{ props.title }}</h1>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 	<!-- end topic -->

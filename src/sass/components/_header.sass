@@ -25,13 +25,15 @@
 		position: fixed
 	&[data-anim-from]
 		position: absolute
-	&_anim
-		position: fixed
+	&_anim,
+	&_in
 		padding-top: 40px
 		color: $white 
 		background-color: transparent
 		&:before
 			display: none
+	&_anim
+		position: fixed
 	&__inner
 		position: relative
 		max-width: 1680px
@@ -97,7 +99,8 @@
 		.is-active &
 			+md
 				fill: $white 
-		.header_anim &
+		.header_anim &,
+		.header_in &
 			fill: $white
 .nav
 	float: left
@@ -132,7 +135,8 @@
 			opacity: 1
 		&.is-active
 			opacity: 1
-		.header_anim &
+		.header_anim &,
+		.header_in &
 			color: $white 
 .lang
 	position: relative
@@ -162,7 +166,8 @@
 		right: 0
 		margin-top: -2px
 		+arr(7,4,$black,b)
-		.header_anim &
+		.header_anim &,
+		.header_in &
 			+arr(7,4,$white,b)
 			+md
 				+arr(18,10,$white,b)
@@ -209,7 +214,8 @@
 			color: $black
 			+md
 				color: $white 
-			.header_anim &
+			.header_anim &,
+			.header_in &
 				color: $white 
 		
 .btn-open-nav
@@ -239,7 +245,8 @@
 		border-top: 4px solid $black
 		opacity: 0.87
 		transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border-color 0.3s
-		.header_anim &
+		.header_anim &,
+		.header_in &
 			border-color: $white 
 		&:nth-child(1)
 			top: 0

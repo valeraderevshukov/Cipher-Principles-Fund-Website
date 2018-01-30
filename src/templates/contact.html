@@ -1,0 +1,33 @@
+---
+title: Contact
+nameSpace: contact
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	{{ header.block() }}
+	<div class="contact">
+		<h2 class="title-xl contact__title">Contact</h2>
+		<div class="contact__map">
+			<div class="contact__map-inner js-contact-map"></div>
+		</div>
+		<div class="contact__info">
+			<div class="contact__address">
+				Cipher Principles <br>
+				50 Berkeley Street <br>
+				London, W1J 8HA
+			</div>
+			<a href="mailto:info@cipherprinciples.com" class="contact__mail">info@cipherprinciples.com</a>
+		</div>
+		<div class="contact__footer">
+			<div class="contact__copy">© CipherPrinciples  2017</div>
+			<nav class="contact__nav">
+				<a href="#">Twitter</a>
+				<a href="#">Facebook</a>
+				<a href="#">Telegram</a>
+			</nav>
+		</div>
+	</div>
+	
+{% endblock %}

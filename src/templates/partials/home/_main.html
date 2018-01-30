@@ -1,5 +1,9 @@
 <!-- begin main -->
-<div class="main">
+<div class="main js-anim-page" data-anim-page="full">
+	{{ header.block({ 
+		logoClass: "js-page-back",
+		jsClass: "js-header-main"
+	}) }}
 	<div class="main__inner">
 		{% include './_sticky-nav.html' %}
 		<div class="main__content">

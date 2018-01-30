@@ -1,0 +1,90 @@
+.contact
+	padding-top: 83px
+	height: 100vh
+	+md
+		padding-top: 73px 
+	+sm 
+		padding-bottom: 37px
+		height: auto
+	&__map 
+		position: relative
+		overflow: hidden
+		margin-left: 420px
+		height: 100%
+		+sm 
+			margin-left: 0
+			height: 316px
+			margin-bottom: -63px
+		&-inner
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+	&__title,
+	&__mail 
+		white-space: nowrap
+	&__title 
+		position: absolute
+		z-index: 2
+		top: 185px
+		left: 40px
+		padding: 7px 0
+		+sm 
+			position: relative
+			top: auto 
+			left: auto
+			padding: 36px 18px 31px
+	&__mail 
+		display: block
+		margin-top: 40px
+		color: #0171BB
+		+f(32px, 700, 36px)
+		+sm 
+			margin-top: 16px
+			+f(20px, null, 36px)
+	&__address
+		+f(24px, null, 28px)
+		+sm 
+			font-size: 20px
+	&__info 
+		position: absolute
+		z-index: 2
+		left: 40px
+		bottom: 127px
+		+sm 
+			position: relative
+			left: auto
+			bottom: auto
+			padding: 20px 20px 22px
+			background: rgba($white, 0.7)
+	&__copy
+		left: 40px
+		+f(14px, 700, 17px)
+		+sm 
+			left: auto
+			padding: 0 17px
+			+f(12px, null, 14px)
+	&__nav 
+		right: 40px
+		font-size: 0
+		+sm 
+			display: none
+		a 
+			display: inline-block
+			vertical-align: top
+			padding-top: 3px
+			color: $black
+			+f(12px, null, 14px)
+			&:not(:last-child)
+				margin-right: 16px
+	&__copy,
+	&__nav
+		position: absolute
+		z-index: 2
+		bottom: 30px
+		+sm 
+			position: relative
+			bottom: auto

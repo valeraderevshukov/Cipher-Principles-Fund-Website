@@ -1,0 +1,16 @@
+---
+title: Company
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{{ header.block({
+		class: "in"
+	}) }}
+	{{ topic.block({
+		topicClass: "in",
+		title: "Company"
+	}) }}
+
+{% endblock %}

@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-cogs" viewBox="0 0 37 34">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arr-bottom" viewBox="0 0 16.5 10.1">
+    <title>
+        Scroll Arrow
+    </title>
+    <path d="M8.2 10.1L0 1.4 1.5 0l6.7 7.2L15 0l1.5 1.4z"/>
+</symbol><symbol id="icon-close" viewBox="0 0 21.29 21.26">
+    <title>
+        close
+    </title>
+    <g opacity=".5">
+        <path d="M-.006 1.41L1.41-.006 21.25 19.837l-1.414 1.414z"/>
+        <path d="M.026 19.85L19.867.007l1.414 1.414L1.44 21.264z"/>
+    </g>
+</symbol><symbol id="icon-cogs" viewBox="0 0 37 34">
     <title>
         cogs
     </title>
@@ -23,4 +36,9 @@
         facebook
     </title>
     <path d="M9.766.157v2.946H8.014c-.64 0-1.071.134-1.295.402-.223.268-.335.67-.335 1.205v2.11h3.27l-.435 3.303H6.384v8.471H2.97v-8.47H.123V6.82H2.97V4.387c0-1.384.387-2.457 1.161-3.22C4.904.404 5.934.023 7.222.023c1.093 0 1.941.045 2.544.134z" fill-rule="evenodd"/>
+</symbol><symbol id="icon-in" viewBox="0 0 16 15">
+    <title>
+        Shape
+    </title>
+    <path d="M13 15V8.5S12.563 7 11 7C9.438 7 9 8.5 9 8.5V15H6V5h3v1s1.053-1.5 3.5-1.5C14.946 4.5 16 6 16 8v7h-3zM2 4A2 2 0 1 1 1.999.001 2 2 0 0 1 2 4zm2 11H0V5.025L4 5v10z" fill-rule="nonzero"/>
 </symbol></svg>

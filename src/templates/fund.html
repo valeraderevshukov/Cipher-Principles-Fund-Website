@@ -1,0 +1,100 @@
+---
+title: Privacy
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{{ header.block() }}
+	<article class="article privacy">
+		<h1 class="title-xl">Terms and conditions</h1>
+		{% for item in [
+			{
+				content: [
+					'This website is issued in the United Kingdom by Dolfin Financial (UK) Ltd which is regulated and authorised by the Financial Conduct Authority (FRN: 552894). Dolfin is a company incorporated and existing under the laws of England and Wales, under company number 07431519 and with its registered address at 25-28 Old Burlington Street, London, W1S 3AN, United Kingdom.',
+					'If you are not a professional investor and do not have experience in investments, please contact an Independent Financial Advisor prior to making any investment decision based on the information on this website.',
+					'Please read the Terms below carefully. By accessing any page of this website, you agree to be bound by the Terms below. If you do not agree to the Terms below, please do not access any pages of this website. We reserve the right to vary the conditions of use at any time and will post any variations here. You are advised to review the conditions of use on a regular basis as you will be deemed to have accepted variations if you continue to use the website after they have been posted.'
+				]
+			},
+			{
+				title: 'Content of website',
+				content: [
+					'Whilst considerable care has been taken to ensure the information contained within this website is accurate and up-to-date, no warranty is given as to the accuracy or completeness of any information and no liability is accepted for any errors or omissions of such information. All products/services referred to on this website are subject to change without notice. We may amend this website and our products and services at any time with or without notice to you. You agree that we shall not be liable to you or to any third party for any amendment, modification, suspension, or discontinuance of the website or any products or services offered through the website.',
+					'We accept no responsibility for any information contained in any website accessed via a hypertext link from this website. The content, accuracy and opinions expressed in such websites are not checked, analysed, monitored or endorsed by us. Access to any third party website is at your own risk. You agree that we have no responsibility or liability for third party websites and that we shall not be liable in any way for any damage or loss caused in relation to the content, goods, products or services available through such third-party websites. Users should refresh their browser each time they visit the website to ensure that they access the most up to date version of the website. No UK or other country based person/company may link their website into our website without our express written permission.'
+				]
+			},
+			{
+				title: 'Website use',
+				content: [
+					'Access to the website will not constitute an offer in jurisdictions in which it would be illegal to make such an offer and in such circumstances it will be deemed to have been sent for information purposes only. In accessing this site from outside of the UK, you are responsible for compliance with local laws or regulations and for obtaining your own legal, tax and financial advice.',
+					'Copyright in these pages is owned by Dolfin except where otherwise indicated by a third party’s proprietary notice. Images, trademarks and brands are also protected by intellectual property laws and may not be reproduced or appropriated in any manner without written permission of their respective owners. Unless specifically prohibited by a notice published on any page, you may make a print copy of such parts of the website as you may reasonably require for your own personal use provided that any copy has attached to it any relevant proprietary notices and/or disclaimers. All other use is prohibited.'
+				]
+			},
+			{
+				title: 'No offer or recommendation',
+				content: [
+					'Access to the website will not constitute an offer in jurisdictions in which it would be illegal to make such an offer and in such circumstances it will be deemed to have been sent for information purposes only. In accessing this site from outside of the UK, you are responsible for compliance with local laws or regulations and for obtaining your own legal, tax and financial advice.'
+				]
+			},
+			{
+				title: 'No reliance',
+				content: [
+					'While Dolfin uses reasonable efforts to obtain information from reliable sources, we make no representations or warranties as to the accuracy, reliability or completeness of any of information or documents on this website. The information contained on this site is subject to change without notice. You acknowledge that any reliance on any information or other material posted on the website is entirely at your own risk. You must in any event conduct your own due diligence and investigations rather than rely on any of the information on this website.'
+				]
+			},
+			{
+				title: 'No warranty',
+				content: [
+					'We publish the website “as is” without any warranty of any kind, express or implied, as to the operation of the website, the accuracy of the information on the website (in so far as such warranties may be excluded under any relevant law) and we shall not be liable for any losses or damage that may result from use of the website as a consequence of any inaccuracies, in or any omissions from, the information which they may contain.'
+				]
+			},
+			{
+				title: 'Website navigational information',
+				content: [
+					'As you navigate the website, Dolfin may also collect information through the use of commonly-used information-gathering tools, such as cookies and Web beacons (collectively “Website Navigational Information”). Website Navigational Information includes standard information from your Web browser (such as browser type and browser language), your Internet Protocol (“IP”) address, and the actions you take on the website (such as the Web pages viewed and the links clicked). We describe this Website Navigational Information in more detail below:'
+				],
+				ol: [
+					'<strong>Cookies: At this time we do not use cookies.</strong> Browser cookies are bits of text that are placed on your computer’s hard drive when you visit certain websites. We use browser cookies to tell us, for example, whether you’ve visited us before or if you’re a new visitor and to help us identify website features in which you may have the greatest interest. Browser cookies may enhance your online experience by saving your preferences while you are visiting a particular website. The “help” portion of the toolbar on most browsers will tell you how to stop accepting new browser cookies, how to be notified when you receive a new browser cookie, and how to disable existing browser cookies. Remember, without browser cookies, you may not be able to take full advantage of all our website features. Cookies are placed on your computer, and accordingly we neither store cookies on our computers nor forward them to any external parties. The information that may be maintained by a cookie is used by Dolfin solely to help us manage the website, improve features of the website and understand usage patterns. This may include such items as: username, the pages visited on the website; the date and time of the visit; the internet address of the referring website; the version of browser used; and the capabilities of the browser. We also use flash cookies on our website to enhance your online experience. Flash cookies are similar to browser cookies, except that they can store data more complex than simple text. Flash cookies, by themselves, cannot do anything to or with the data on your computer. In addition, flash cookies cannot access or remember your email address or other personal information unless you provide the information on this website. We use flash cookies to provide you with a better user experience. You can manage and disable flash cookies by clicking http://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html for Manage and Disable Flash Cookies. This website does not use any third-party cookies.',
+					'Web Beacons. This website may also use Web beacons alone or in conjunction with cookies to compile information about Users’ usage of the website and interaction with emails from Dolfin. Web beacons are clear electronic images that can recognize certain types of information on your computer, such as cookies, when you viewed a particular website tied to the Web beacon, and a description of a website tied to the Web beacon. We use Web beacons to operate and improve the websites and email communications. We may use information from Web beacons in combination with other data we have about our clients to provide you with information about our Firm and our services.'
+				]
+			},
+			{
+				title: 'How we use this information',
+				content: [
+					'We will only use the information you have provided in order to:'
+				],
+				ul: [
+					'Ensure that content from our websites are presented in the most efficient manner for you and your computer',
+					'Respond to any query or comment you have made, or to provide you with information you have requested'
+				]
+			},
+			{
+				content: [
+					'The data we collect from you may be transferred to, and stored at, a destination outside the European Economic Area (“EEA”). It may also be processed by service providers operating outside the EEA. By submitting your details you agree to this transfer, storing and processing.'
+				]
+			}
+		] %}
+			{% if item.title %}<h2 class="title-md">{{item.title}}</h2>{% endif %}
+			{% if item.content %}
+				{% for item in item.content %}
+					<p>{{item | safe}}</p>
+				{% endfor %}
+			{% endif %}
+			{% if item.ol %}
+				<ol>
+					{% for item in item.ol %}
+						<li>{{item | safe}}</li>
+					{% endfor %}
+				</ol>
+			{% endif %}
+			{% if item.ul %}
+				<ul>
+					{% for item in item.ul %}
+						<li>{{item | safe}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endfor %}
+	</article>
+
+{% endblock %}

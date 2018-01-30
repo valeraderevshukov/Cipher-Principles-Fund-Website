@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Index" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-40.000000, -261.000000)">
+        <path d="M53,276 L53,269.5 C53,269.5 52.5634431,268 51,268 C49.4375214,268 49,269.5 49,269.5 L49,276 L46,276 L46,266 L49,266 L49,267 C49,267 50.0527837,265.5 52.5,265.5 C54.9462829,265.5 56,267 56,269 C56,271.791527 56,276 56,276 L53,276 Z M42,265 C40.8962103,265 40,264.105972 40,263.001107 C40,261.896242 40.8962103,261 42,261 C43.1037897,261 44,261.896207 44,263.001107 C44,264.106007 43.1037587,265 42,265 Z M44,276 L40,276 L40,266.02532 L44,266 L44,276 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>
