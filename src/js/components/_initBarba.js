@@ -23,11 +23,12 @@ DOC.ready(() => {
     initSplitRws();
   } );
 
-  stickySidebar.init();
   OBSERVER.SUB(EVENT.TOPIC_ANIM_COMPLATE, () => {
     sections.show();
     sections.parallaxInit();
+    stickySidebar.init();
   });
+  
   preloader.init();
   initSplitRws();
   

@@ -88,8 +88,8 @@ export default {
     if (!sticky) return;
   
     new StickySidebar('.js-sticky-sidebar', {
-      topSpacing: 140,
-      bottomSpacing: 20,
+      topSpacing: 197,
+      // bottomSpacing: 20,
       containerSelector: '.js-sticky-wrapper'
     });
     
