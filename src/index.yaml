@@ -4,11 +4,10 @@ PageList:
 - file: home.html
   ready: 100
 - file: company.html
+  ready: 100
 - file: contact.html
   ready: 100
 - file: fund.html
-  ready: 100
-- file: home.html
   ready: 100
 - file: research.html
   ready: 100

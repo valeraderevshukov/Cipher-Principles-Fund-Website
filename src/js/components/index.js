@@ -10,3 +10,4 @@ import './_drop';
 import './_stickyHeader';
 import './_disclaimer';
 import './_initPerfectScrollbar';
+import './_inversion';
