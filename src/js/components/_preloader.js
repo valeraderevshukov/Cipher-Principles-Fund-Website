@@ -1,5 +1,5 @@
 import TopicAnim from './_topicAnim';
-import { WIN, HTMLBODY } from '../_constants';
+import { WIN, HTMLBODY, BODY } from '../_constants';
 
 export default class Preloader {
 
@@ -112,7 +112,11 @@ export default class Preloader {
         alpha: 0,
         ease: Power1.easeInOut
       }, 1.2)
-      .call( () => TopicAnim.play(), null, null, 1 )
+      .call( () => {
+        const disclaimer = BODY.find('.js-disclaimer');
+        if (disclaimer.length) return;
+        TopicAnim.play();
+      }, null, null, 1 )
       .eventCallback( 'onComplete', () => {
         HTMLBODY.animate(() => {
           scrollTop: 0;

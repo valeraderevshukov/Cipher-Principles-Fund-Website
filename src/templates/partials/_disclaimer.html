@@ -1,0 +1,31 @@
+<!-- begin disclaimer -->
+<div class="disclaimer js-disclaimer">
+	<div class="disclaimer__inner">
+		<div class="disclaimer__info js-disclaimer-info">Important disclaimer</div>
+		<div class="disclaimer__title title-middle js-disclaimer-title">With risk comes reward(and legalese)</div>
+		<div class="disclaimer__wrap js-disclaimer-wrap">
+			<div class="disclaimer__text js-scroll-wrap">
+				{% set texts = [
+					'This website includes information related to unregulated collective investment schemes. It is only available to investment professionals or professional clients. Therefore, if you wish to access the information on this website you are required to confirm that you meet this criteria by clicking the confirmation at the bottom of this page. If you do not satisfy the criteria for investment professionals or professional clients, you should exit this website. ',
+					'The information available on this website is not intended for distribution to, or use by, any individual or entity in any jurisdiction where its distribution or use would be contrary to local law or regulation or which would subject Cipher Principles Fund Ltd (“Cipher”) to registration in the relevant jurisdiction. All persons who access this website are required to inform themselves of and to comply with all applicable sales restrictions in their home country.',
+					'If you are a person based in the European Union, you are also required to confirm by clicking the confirmation at the bottom of this page that you have not been requested or encouraged to access this website or been solicited in any way by Cipher or any person acting on Cipher’s behalf. If you cannot give this confirmation, you should exit this website.',
+					'The information available on this website is for information purposes only and does not take into account the specific circumstances of any user. It does not constitute investment advice and is not intended to be and should not be construed as a recommendation, offer or solicitation to acquire or dispose of any financial instruments mentioned and will not form the basis or a part of any contract or commitment whatsoever. ',
+					'The information available on this website is based on sources believed by Cipher to be reliable but no representation or warranty is made by Cipher or any of its directors, officers or employees with regard to the accuracy, completeness or suitability of such information.  Cipher is under no obligation to update the information available on this website and may remove or make changes to all or any part of such information at any time without prior notice.',
+					'Neither Cipher nor any of its directors, officers or employees accepts any responsibility or liability whatsoever for any expense, loss or damages arising out of or in any way connected with the use of all or any part of the information available on this website',
+					'Before making any investment decision an investor should seek independent professional advice regarding the suitability of any transaction including the potential economic benefits and risks and the legal, regulatory, credit, accounting and tax implications. The past performance of financial instruments is not indicative of future results and you may get back less than the amount you invested. Exchange rate changes may cause the value of overseas investments or investments denominated in different currencies to rise or fall.',
+					'Access to and use of this website and the information available on it are subject to the Terms of Use.',
+					'By clicking the confirmation below, you confirm that:',
+					'you satisfy the criteria for investment professionals or professional clients;',
+					'if you are a person based in the EU, you have not been requested or encouraged to access this website or been solicited in any way by Cipher or any person acting on Cipher’s behalf; and',
+					'you have read, understood and accepted the Terms of Use of this website.'
+				] %}
+				{% for text in texts %}<p>{{ text }}</p>{% endfor %}
+			</div>
+		</div>
+		<div class="disclaimer__footer js-disclaimer-footer">
+			<button class="btn btn_md js-disclaimer-trigger" type="button">I confirm the above</button>
+			<a href="#" class="btn-transparent btn-transparent_md">Our research</a>
+		</div>
+	</div>
+</div>
+<!-- end disclaimer -->

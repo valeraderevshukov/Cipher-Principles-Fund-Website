@@ -5,6 +5,7 @@ import stickySidebar from './_sticky-sidebar';
 import sections from './_sections';
 import Preloader from './_preloader';
 import initSplitRws from './_splitTextIntoRows';
+import {initDisclaimer} from './_disclaimer';
 
 DOC.ready(() => {
   const pageContact = 'contact';
@@ -18,6 +19,7 @@ DOC.ready(() => {
     stickySidebar.init();
     preloader.init();
     initSplitRws();
+    initDisclaimer();
   } );
 
   stickySidebar.init();

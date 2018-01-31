@@ -2,4 +2,13 @@ ProjectTitle: cipher-principles-fund-website
 
 PageList:
 - file: home.html
-  ready: 50
+  ready: 100
+- file: company.html
+- file: contact.html
+  ready: 100
+- file: fund.html
+  ready: 100
+- file: home.html
+  ready: 100
+- file: research.html
+  ready: 100

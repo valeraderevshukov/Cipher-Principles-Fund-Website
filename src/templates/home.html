@@ -9,11 +9,12 @@ bodyClass: is-fixed
 	{{ header.block({
 		class: "anim"
 	}) }}
-	{% include 'partials/home/_preloader.html' %}
 	{{ topic.block({
 		home: true,
 		title: "Research-driven, regulated cryptocurrency investment fund"
 	}) }}
 	{% include 'partials/home/_main.html' %}
+	{% include 'partials/home/_preloader.html' %}
+	{% include 'partials/_disclaimer.html' %}
 
 {% endblock %}
