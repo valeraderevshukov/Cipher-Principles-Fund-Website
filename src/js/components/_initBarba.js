@@ -7,6 +7,9 @@ import Preloader from './_preloader';
 import initSplitRws from './_splitTextIntoRows';
 import {initDisclaimer} from './_disclaimer';
 
+import EVENT from './../communication/_events';
+import OBSERVER from './../communication/_observer';
+
 DOC.ready(() => {
   const pageContact = 'contact';
   const topic = '.js-topic';
@@ -22,10 +25,13 @@ DOC.ready(() => {
     initDisclaimer();
   } );
 
-  stickySidebar.init();
-  sections.init();
+  OBSERVER.SUB(EVENT.TOPIC_ANIM_COMPLATE, () => {
+    sections.show();
+    sections.parallaxInit();
+    stickySidebar.init();
+  });
+  
   preloader.init();
-  // setTimeout(sections.show, 5000);
   initSplitRws();
   
 });

@@ -13,8 +13,22 @@ bodyClass: is-fixed
 		home: true,
 		title: "Research-driven, regulated cryptocurrency investment fund"
 	}) }}
-	{% include 'partials/home/_main.html' %}
 	{% include 'partials/home/_preloader.html' %}
 	{% include 'partials/_disclaimer.html' %}
+	<div class="js-sticky-wrapper" style="width: 100%; position: relative;">
+		{% include 'partials/home/_main.html' %}
+		{{ footer.block({
+			attrs: 'data-section="why"',
+			classList: 'footer_home',
+			label: 'Why we do it',
+			title: 'A confluence of skill and experience in a time of opportunity',
+			description: [
+				'We recognise that cryptocurrencies are more than just a new financial product. They are an entirely new technology that will change the way people do business and the way countries trade with each other.  But with this enormous shift looming on the horizon, there is a seemingly endless stream of fear, uncertainty, and doubt casting shadows over the incredible potential waiting to be unlocked.',
+				'The team we have built is designed specifically to cut through all of that; to evaluate each investment opportunity on the merits of the technology it rests on; and to make the right investment decisions at the right time, for the right portfolios.',
+				'We want to see a financial services world that is efficient, transparent, and exciting for every person – not just governments and large archaic financial institutions.'
+			],
+			logo: true
+		}) }}
+	</div>
 
 {% endblock %}

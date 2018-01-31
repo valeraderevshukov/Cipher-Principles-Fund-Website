@@ -28,9 +28,9 @@ BODY.on('click', startTrigger, function() {
       page.addClass(clearTransform);
       BODY.removeClass(FIXED);
       BODY.css({ paddingRight: 0});
-      sections.show();
+      // sections.show();
       WIN.trigger('scroll');
-      stickySidebar.init();
+      // stickySidebar.init();
       headerAnim.css({ right: 0});
       OBSERVER.ON_FIRE(EVENT.TOPIC_ANIM_COMPLATE);
     });

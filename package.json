@@ -60,6 +60,7 @@
     "lost": "^7.1.0",
     "perfect-scrollbar": "^1.3.0",
     "postcss-csso": "^2.0.0",
+    "rellax": "^1.5.0",
     "require-dir": "^0.3.2",
     "require-yaml": "^0.0.1",
     "run-sequence": "^1.1.5",

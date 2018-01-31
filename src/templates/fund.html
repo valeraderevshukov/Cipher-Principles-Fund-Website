@@ -96,5 +96,19 @@ title: Privacy
 			{% endif %}
 		{% endfor %}
 	</article>
+	{{ footer.block({
+		classList: 'footer_default',
+		title: 'What can we help you with?',
+		meta: [
+			'<strong>© Blenchley Cipher 2017</strong>',
+			'50 Berkeley Street, London, W1J 8HA',
+			'<a href="mailto:info@dolfin.com">info@dolfin.com</a>'
+		],
+		nav: [
+			'<a href="#">Twitter</a>',
+			'<a href="#">Facebook</a>',
+			'<a href="#">Telegram</a>'
+		]
+	}) }}
 
 {% endblock %}

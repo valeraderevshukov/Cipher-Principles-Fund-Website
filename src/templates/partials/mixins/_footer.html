@@ -1,0 +1,54 @@
+{% import "../_mixins.html" as mixins %}
+{% macro block(props) %}
+<!-- begin footer -->
+<footer class="footer {{props.classList}}">
+	<div class="footer__container" {{props.attrs | safe}}>
+		<div class="footer__inner">
+			<div class="footer__top">
+				{% if props.label %}
+					<div class="label footer__label">{{props.label}}</div>
+				{% endif %}
+				<h2 class="title-lg footer__title">{{props.title}}</h2>
+				{% if props.description %}
+					<div class="footer__description">
+						{% for item in props.description %}
+							<p>{{item | safe}}</p>
+						{% endfor %}
+					</div>
+				{% endif %}
+				<button class="btn footer__btn">Get in Touch</button>
+			</div>
+			<div class="footer__info">
+				{% if props.logo %}
+					<a href="#" class="footer__logo">
+						<span>Power By</span>
+						<img src="img/dolfin.svg" alt="DOLFIN">
+					</a>
+				{% endif %}
+				<p>{{props.info or 'Dolfin is the trading name of Dolfin Financial (UK) Ltd, a company authorised and regulated by the Financial Conduct Authority (reference number 552894) and registered in England and Wales with company registration number 07431519. Dolfin Financial (UK) Ltd is a subsidiary of Dolfin Group Ltd, an exempted company organised under the laws of Bermuda, registered number 50505.'}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer__bottom">
+		<ul class="footer__meta">
+			{% for item in props.meta or [
+				'<strong>© Cipher Principles 2017</strong>',
+				'50 Berkeley Street, London, W1J 8HA',
+				'<a href="mailto:info@cipherprinciples.com">info@cipherprinciples.com</a>',
+				'<a href="#">LinkedIn</a>'
+			] %}
+			    <li>{{item | safe}}</li>
+			{% endfor %}
+		</ul>
+		<ul class="footer__nav">
+			{% for item in props.nav or [
+				'<a href="#">Terms and Conditions</a>',
+				'<a href="#">Privacy and Cookies</a>'
+			] %}
+			    <li>{{item | safe}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</footer>
+<!-- end footer -->
+{% endmacro %}
