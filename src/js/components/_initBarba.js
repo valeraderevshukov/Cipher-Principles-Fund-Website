@@ -6,6 +6,7 @@ import sections from './_sections';
 import Preloader from './_preloader';
 import initSplitRws from './_splitTextIntoRows';
 import {initDisclaimer} from './_disclaimer';
+import company from './_company';
 
 import TopicAnim from './_topicAnim';
 
@@ -27,6 +28,7 @@ DOC.ready(() => {
     stickySidebar.init();
     initSplitRws();
     initDisclaimer();
+    company.init();
     if (currentStatus.namespace === pageHome) {
       preloader.init();
       BODY.addClass(FIXED);
@@ -45,6 +47,7 @@ DOC.ready(() => {
 
   if (!home.length) TopicAnim.play();
   
+  company.init();
   preloader.init();
   initSplitRws();
   

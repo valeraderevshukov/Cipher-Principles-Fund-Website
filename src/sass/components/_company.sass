@@ -2,12 +2,19 @@
 	position: relative
 	padding: 0 40px
 	max-width: 1680px
+	+lg 
+		padding: 0 20px
+	&__container
+		position: relative
 	&__header
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 		padding: 20px
+		+lg 
+			position: relative
+			padding: 0 0 30px
 	&__title
 		margin: 0 auto
 		max-width: 800px
@@ -20,10 +27,18 @@
 		min-height: 600px
 		+clr
 		+vertical
-		&:first-child
+		+lg 
+			padding: 0 0 40px
+			height: auto
+			min-height: auto
+		&[data-id="1"]
 			padding-top: 200px
+			+lg 
+				padding-top: 0
 			.company__subtitle
 				margin-bottom: 20px
+			.company__inner
+				vertical-align
 	&__inner
 		display: inline-block
 		vertical-align: middle
@@ -34,30 +49,101 @@
 		max-width: 380px
 		+f(18px, 400, 28px)
 		text-align: left
+		+lg 
+			float: none
+			max-width: 100%
+			+f(13px, null, 18px)
 	&__subtitle
 		margin-bottom: 12px
+		+lg 
+			margin-bottom: 20px
 	&__label
 		margin-bottom: 15px
+		+lg 
+			margin-bottom: 20px
+	&__dots
+		position: absolute
+		z-index: 20
+		top: 50%
+		right: 8px
+		opacity: 0
+		transition: opacity 0.5s
+		+lg
+			position: relative
+			top: auto 
+			right: auto
+			opacity: 1
+			text-align: center
+			pointer-events: none
+		&.is-active
+			opacity: 1
+		span
+			position: relative
+			display: block
+			width: 28px
+			height: 28px
+			cursor: pointer
+			+lg 
+				display: inline-block
+				vertical-align
+				width: 14px
+				height: 14px
+			&.is-active 
+				&:before
+					background: rgba($black, 0.7)
+			&:before 
+				content: ''
+				position: absolute
+				top: 9px
+				left: 9px
+				right: 9px
+				bottom: 9px
+				border-radius: 50%
+				opacity: 1
+				background: rgba($black, 0.2)
+				+lg 
+					top: 4px
+					left: 4px
+					right: 4px
+					bottom: 4px
 	&__diagramm
 		position: absolute
-		z-index: 1000
 		top: 0
 		left: 0
 		padding: 240px 40px 40px
-		width: 100%
-		max-width: 900px
+		width: calc(100% - 480px)
+		max-width: 1000px
 		height: 100vh
 		+vertical
 		white-space: nowrap
 		transform: translate3d(0,0,0) scale(0.9)
-		transition: transform 0.25s
+		transition: transform 0.5s, padding 0.5s
+		pointer-events: none
+		+lg
+			position: relative
+			top: auto
+			left: auto
+			padding: 40px 0
+			margin: 0 auto
+			width: 100%
+			max-width: 360px
+			height: auto
+		&.is-active 
+			padding-top: 40px
+			transform: translate3d(0,0,0) scale(1)
+			[data-diagramm-inner]
+				opacity: 1
+		&:before 
+			+lg 
+				display: none		
 		svg 
 			display: inline-block
 			vertical-align: middle
 			max-width: 100%
-			height: 100%
-			max-height: 800px
-
-[data-diagramm-inner-text],
-[data-diagramm-inner-part]
-	display: none
+			max-height: 100%
+			transition: transform 0.7s
+			+lg 
+				display: block
+		[data-diagramm-inner]
+			opacity: 0
+			transition: opacity 0.5s

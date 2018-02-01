@@ -47,5 +47,5 @@ export const {
   widthXS: 374,
   widthSM: 767,
   widthMD: 1023,
-  widthLG: 1279
+  widthLG: 1259
 };
