@@ -29,7 +29,7 @@ export default {
           height: topicHeight+'px',
           ease: Power1.easeInOut
         }, 0)
-        .add( stagger.play(), 0.25 );
+        .add( stagger.play(), 0.45 );
     }
     else {
       stagger.play();
