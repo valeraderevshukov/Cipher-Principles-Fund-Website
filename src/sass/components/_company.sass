@@ -129,9 +129,12 @@
 			width: 100%
 			max-width: 360px
 			height: auto
+			transform: translate3d(0,0,0) scale(0.9)
 		&.is-active 
 			padding-top: 40px
 			transform: translate3d(0,-50%,0) scale(1)
+			+lg
+				transform: translate3d(0,0,0) scale(1)
 			[data-diagramm-inner]
 				opacity: 1
 		&:before 
