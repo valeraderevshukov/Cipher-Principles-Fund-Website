@@ -5,7 +5,9 @@ title: Privacy
 
 {% block content %}
 
-	{{ header.block() }}
+	{{ header.block({
+		linkClass: 1
+	}) }}
 	<article class="article privacy">
 		<h1 class="title-xl">Terms and conditions</h1>
 		{% for item in [

@@ -64,7 +64,7 @@ export const initDisclaimer = () => {
 	      })
 	      .eventCallback( 'onComplete', () => {
 	        setCookie('disclaimer', 'yes', {
-	        	expires: 3000
+	        	expires: 3600*8760
 	        });
 	        disclaimer.remove();
 	        TopicAnim.play();

@@ -6,7 +6,9 @@ nameSpace: contact
 
 {% block content %}
 	
-	{{ header.block() }}
+	{{ header.block({
+		linkClass: 4
+	}) }}
 	<div class="contact">
 		<h2 class="title-xl contact__title">Contact</h2>
 		<div class="contact__map">

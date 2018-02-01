@@ -2,7 +2,7 @@
 {% macro block(props) %}
 	<!-- begin header -->
 	<header class="header{% if props.class %} header_{{ props.class }}{% endif %} {% if props.jsClass %}{{props.jsClass}}{% else %} js-header{% endif %}">
-		<div class="header__inner inner js-header-inner" {% if props.class === "anim" %}data-anim-from="top"{% endif %}>
+		<div class="header__inner inner js-header-inner" {% if props.class === "anim" %}data-anim-from="top"{% endif %}{% if props.attr %} {{ props.attr }}{% endif %}>
 			<!-- begin logo -->
 			<a href="./home.html" class="logo{% if props.logoClass %} {{props.logoClass}}{% endif %}">
 				<svg width="209" height="94" viewBox="0 0 209 94" xmlns="http://www.w3.org/2000/svg">
@@ -70,23 +70,27 @@
 						{% set pages = [
 							{
 								name: "Fund",
-								url: "./fund.html"
+								url: "./fund.html",
+								class: "fundClass"
 							},
 							{
 								name: "Company",
-								url: "./company.html"
+								url: "./company.html",
+								class: "companyClass"
 							},
 							{
 								name: "Research",
-								url: "./research.html"
+								url: "./research.html",
+								class: "researchClass"
 							},
 							{
 								name: "Contact",
-								url: "./contact.html"
+								url: "./contact.html",
+								class: "contactClass"
 							}] 
 						%}
 						{% for item in pages %}
-							<li class="nav__item"><a class="nav__link" href="{{ item.url }}"{% if item.target %} data-nav-href="{{item.target}}"{% endif %}>{{ item.name }}</a></li>
+							<li class="nav__item{% if loop.index === props.linkClass %} is-active{% endif %}"><a class="nav__link" href="{{ item.url }}"{% if item.target %} data-nav-href="{{item.target}}"{% endif %}>{{ item.name }}</a></li>
 						{% endfor %}
 					</ul>
 				</nav>

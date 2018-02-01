@@ -7,22 +7,34 @@ import Preloader from './_preloader';
 import initSplitRws from './_splitTextIntoRows';
 import {initDisclaimer} from './_disclaimer';
 
+import TopicAnim from './_topicAnim';
+
 import EVENT from './../communication/_events';
 import OBSERVER from './../communication/_observer';
 
+
 DOC.ready(() => {
   const pageContact = 'contact';
+  const pageHome = 'home';
   const topic = '.js-topic';
   const preloader = new Preloader({ counterDuration: 0.6 });
+  const home = $('[data-namespace="home"]');
+
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('transitionCompleted', (currentStatus) => {
-    if (BODY.find(topic).length) BODY.addClass(FIXED);
     if (currentStatus.namespace === pageContact) window.initMap();
     stickySidebar.init();
-    preloader.init();
     initSplitRws();
     initDisclaimer();
+    if (currentStatus.namespace === pageHome) {
+      preloader.init();
+      BODY.addClass(FIXED);
+    }
+    else {
+      BODY.removeClass(FIXED);
+      TopicAnim.play();
+    }
   } );
 
   OBSERVER.SUB(EVENT.TOPIC_ANIM_COMPLATE, () => {
@@ -30,6 +42,8 @@ DOC.ready(() => {
     sections.parallaxInit();
     stickySidebar.init();
   });
+
+  if (!home.length) TopicAnim.play();
   
   preloader.init();
   initSplitRws();
