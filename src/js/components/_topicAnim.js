@@ -14,13 +14,26 @@ export default {
   },
   title() {
     const rows = $('.js-topic [data-stagger="inner"]');
+    const topicAnimHeight = $('.js-topic [data-anim-height]');
+    const topicHeight = topicAnimHeight.data('anim-height');
+    const tm = new TimelineMax({pause: true});
+    const stagger = new TimelineMax({pause: true}).staggerTo(rows, 0.6, {
+      opacity: 1,
+      y: 0,
+      ease: Power1.easeInOut
+    }, 0.15).play();
     if (!rows) return;
-    new TimelineMax()
-      .staggerTo(rows, 0.6, {
-        opacity: 1,
-        y: 0,
-        ease: Power1.easeInOut
-      }, 0.15);
+    if (topicAnimHeight.length) {
+      tm
+        .to(topicAnimHeight, 0.5, {
+          height: topicHeight+'px',
+          ease: Power1.easeInOut
+        }, 0)
+        .add( stagger.play(), 0.25 );
+    }
+    else {
+      stagger.play();
+    }
   },
 
   play() {
