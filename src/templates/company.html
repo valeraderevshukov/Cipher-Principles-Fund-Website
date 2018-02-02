@@ -73,6 +73,43 @@ title: Company
 			</div>
 		</div>
 
+		<!-- begin infrastructure -->
+		<div class="infrastructure">
+			<div class="infrastructure__inner">
+				<h2 class="title-lg title-lg_simple infrastructure__title">Our Infrastructure</h2>
+				<div class="infrastructure__row">
+					{% for item in [
+						{
+							label: 'Administrator',
+							items: [ 'sfs' ]
+						},
+						{
+							label: 'Regulators',
+							items: [ 'securities', 'cayman' ]
+						},
+						{
+							label: 'Legal Counsel',
+							items: [ 'hj', 'simmons' ]
+						},
+						{
+							label: 'Custody & Execution',
+							items: [ 'dolfin' ]
+						}
+					] %}
+						<div class="infrastructure__col">
+							<div class="infrastructure__label">{{item.label}}</div>
+							{% for item in item.items %}
+								<div class="infrastructure__item">
+									<img src="img/{{item}}.png" alt="{{item}}">
+								</div>
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<!-- end infrastructure -->
+
 		{{ footer.block({
 			classList: 'footer_md',
 			logo: true,

@@ -1,0 +1,62 @@
+.infrastructure
+	overflow: hidden
+	padding: 94px 0 149px
+	background: #F7F7F7
+	+md 
+		padding: 56px 0 40px
+	&__title
+		padding: 0 20px
+		margin: 0 auto 146px
+		max-width: 880px
+		color: #333
+		+md 
+			margin-bottom: 10px
+			max-width: 100%
+	&__row
+		margin: 0 auto
+		max-width: 1340px
+		font-size: 0
+		+md
+			display: flex
+			flex-wrap: wrap
+			margin: 0 -60px 0 0
+			padding: 0 20px
+	&__col
+		display: inline-block
+		vertical-align: top
+		padding: 0 20px
+		width: 25%
+		+md 
+			padding: 36px 0
+			width: 50%
+			order: 4
+		&:nth-child(2)
+			+md
+				order: 1
+		&:nth-child(3)
+			+md
+				order: 2
+		&:nth-child(4)
+			+md
+				order: 3
+	&__label
+		margin-bottom: 40px
+		+f(16px, 400, 28px)
+		+md 
+			margin-bottom: 22px
+			+f(13px, null, 18px)
+	&__item
+		height: 108px
+		+vertical 
+		text-align: left
+		&:not(:last-child)
+			margin-bottom: 61px
+			+md 
+				margin-bottom: 47px
+		img 
+			display: inline-block
+			vertical-align: middle
+			max-width: 100%
+			max-height: 100%
+			+md 
+				max-width: 100px
