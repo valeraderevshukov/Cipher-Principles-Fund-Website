@@ -8,7 +8,10 @@
 	background-image: linear-gradient(151deg, #0A2F2A 8%, #2D5442 100%)
 	&_in
 		position: relative
+		min-height: 515px
 		height: auto
+		+sm
+			min-height: 330px
 	&__bg
 		position: absolute
 		top: 0
@@ -48,9 +51,18 @@
 		+vertical
 		transition: height .3s
 		text-align: left
+		&.is-fixed
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
 		.topic_in &
 			padding: 110px 40px 75px 419px
 			min-height: 0
+			+xl
+				padding: 150px 20px 130px 120px
+			+md
+				padding: 150px 20px 130px
 		+xl
 			padding-left: 120px
 			text-align: center

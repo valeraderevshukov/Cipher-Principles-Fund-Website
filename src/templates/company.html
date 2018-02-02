@@ -12,66 +12,72 @@ title: Company
 	{{ topic.block({
 		topicClass: "in",
 		title: "Company",
-		attr: 'data-anim-height=515'
+		attr: 'data-anim-height=515 data-anim-height-mob=330'
 	}) }}
-
-	<div class="company js-company">
-		<div class="company__container">
-			<div class="company__diagramm js-company-diagramm">
-				{% include 'partials/_diagramm.html' %}
-			</div>
-			<div class="company__dots js-company-dots">
-				<span class="js-company-bullet"></span>
-				<span class="js-company-bullet"></span>
-				<span class="js-company-bullet"></span>
-			</div>
-			<div class="company__slider js-company-slider">
-				{% for item in [
-					{
-						title: 'Insight and specialist knowledge drive growth',
-						content: 'The team of the fund is represented by the highly-qualified experts in the areas of Technology, Finance, Operations and Research. Having embraced the highest standards in their professions, our team members possess a sound reputational capital together with the right mix of skills, talent and capacity. Their insight and specialist knowledge will help the fund to continually improve its performance.'
-					},
-					{
-						label: '1. Research',
-						title: 'We do the hard work for you',
-						content: 'The researches we employ come from the pinnacle of their academic disciplines. Mathematicians and cryptologists who have been involved in the development of blockchains are paired with technologists and financial services professionals to create a team of unparalleled experience. '
-					},
-					{
-						label: '2. Operations',
-						title: 'Reliable and Regulated',
-						content: 'Custody and Execution is paramount to the success of the Fund.  Our team of professionals come with years of experience in fund administration and back office operations, ensuring the research-driven investment decisions are carried out to maximise returns.'
-					},
-					{
-						label: '3. Investments',
-						title: 'Tradition meets Innovation',
-						content: 'Understanding the technology behind cryptocurrencies better than anyone is only half of our story. The Fund is led by a stable of quantitative portfolio analysts and fundamental portfolio managers.'
-					}
-				] %}
-					<div class="company__slide" data-id="{{loop.index}}">
-						{% if loop.first %}
-							<div class="company__header">
-								<h2 class="title-lg title-lg_simple company__title">Cross-industry expertise</h2>
-							</div>
-						{% endif %}
-						<div class="company__inner">
-							<div class="company__content">
-								{% if item.label %}
-									<div class="company__label">{{item.label}}</div>
-								{% endif %}
-								<h3 class="title-md company__subtitle">{{item.title}}</h3>
-								<p>{{item.content}}</p>
+	<div class="js-anim-page" data-anim-page="full" data-scroll-page="inner"> 
+		{{ header.block({ 
+			logoClass: "js-page-back",
+			jsClass: "js-header-main",
+			linkClass: 2
+		}) }}
+		<div class="company js-company">
+			<div class="company__container">
+				<div class="company__diagramm js-company-diagramm">
+					{% include 'partials/_diagramm.html' %}
+				</div>
+				<div class="company__dots js-company-dots">
+					<span class="js-company-bullet"></span>
+					<span class="js-company-bullet"></span>
+					<span class="js-company-bullet"></span>
+				</div>
+				<div class="company__slider js-company-slider">
+					{% for item in [
+						{
+							title: 'Insight and specialist knowledge drive growth',
+							content: 'The team of the fund is represented by the highly-qualified experts in the areas of Technology, Finance, Operations and Research. Having embraced the highest standards in their professions, our team members possess a sound reputational capital together with the right mix of skills, talent and capacity. Their insight and specialist knowledge will help the fund to continually improve its performance.'
+						},
+						{
+							label: '1. Research',
+							title: 'We do the hard work for you',
+							content: 'The researches we employ come from the pinnacle of their academic disciplines. Mathematicians and cryptologists who have been involved in the development of blockchains are paired with technologists and financial services professionals to create a team of unparalleled experience. '
+						},
+						{
+							label: '2. Operations',
+							title: 'Reliable and Regulated',
+							content: 'Custody and Execution is paramount to the success of the Fund.  Our team of professionals come with years of experience in fund administration and back office operations, ensuring the research-driven investment decisions are carried out to maximise returns.'
+						},
+						{
+							label: '3. Investments',
+							title: 'Tradition meets Innovation',
+							content: 'Understanding the technology behind cryptocurrencies better than anyone is only half of our story. The Fund is led by a stable of quantitative portfolio analysts and fundamental portfolio managers.'
+						}
+					] %}
+						<div class="company__slide" data-id="{{loop.index}}">
+							{% if loop.first %}
+								<div class="company__header">
+									<h2 class="title-lg title-lg_simple company__title">Cross-industry expertise</h2>
+								</div>
+							{% endif %}
+							<div class="company__inner">
+								<div class="company__content">
+									{% if item.label %}
+										<div class="company__label">{{item.label}}</div>
+									{% endif %}
+									<h3 class="title-md company__subtitle">{{item.title}}</h3>
+									<p>{{item.content}}</p>
+								</div>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</div>
 
-	{{ footer.block({
-		classList: 'footer_md',
-		logo: true,
-		title: 'Supercharge your investment with Cipher Principles crypto fund'
-	}) }}
+		{{ footer.block({
+			classList: 'footer_md',
+			logo: true,
+			title: 'Supercharge your investment with Cipher Principles crypto fund'
+		}) }}
+	</div>
 
 {% endblock %}

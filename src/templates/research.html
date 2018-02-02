@@ -12,12 +12,19 @@ title: Research
 	{{ topic.block({
 		topicClass: "in",
 		title: "Research",
-		attr: 'data-anim-height=515'
+		attr: 'data-anim-height=515 data-anim-height-mob=330'
 	}) }}
-	{{ footer.block({
-		classList: 'footer_md',
-		logo: true,
-		title: 'Supercharge your investment with Cipher Principles crypto fund'
-	}) }}
+	<div class="js-anim-page" data-anim-page="full" data-scroll-page="inner"> 
+		{{ header.block({ 
+			logoClass: "js-page-back",
+			jsClass: "js-header-main",
+			linkClass: 3
+		}) }}
+		{{ footer.block({
+			classList: 'footer_md',
+			logo: true,
+			title: 'Supercharge your investment with Cipher Principles crypto fund'
+		}) }}
+	</div>
 
 {% endblock %}

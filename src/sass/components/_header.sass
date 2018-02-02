@@ -4,9 +4,10 @@
 	left: 0
 	right: 0
 	padding-top: 28px
-	z-index: 100
+	z-index: 102
 	height: 83px
 	color: $black 
+	transition: transform .3s, opacity .3s
 	background-color: $alabaster 
 	+md
 		padding-top: 20px
@@ -28,6 +29,14 @@
 			background-color: $blue 
 	&.is-fixed
 		position: fixed
+	[data-scroll-page="inner"] &
+		.is-show-inner-header &
+			transform: translateY(0)
+			opacity: 1
+	[data-scroll-page="inner"] &
+		position: fixed
+		transform: translateY(-123px)
+		opacity: 0
 	&[data-anim-from]
 		position: absolute
 	&_anim,
@@ -36,8 +45,13 @@
 		background-color: transparent
 		&:before
 			display: none
+	&_in
+		position: fixed
+		.is-show-inner-header &
+			opacity: 0
 	&_anim
 		position: fixed
+		z-index: 101
 	&__inner
 		position: relative
 		max-width: 1680px

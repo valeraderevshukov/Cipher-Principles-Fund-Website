@@ -1,6 +1,6 @@
 import { TweenLite } from 'gsap';
 import Barba from 'barba.js';
-import { DOC, BODY, FIXED } from '../_constants';
+import { DOC, BODY, FIXED, HTMLBODY, WIN } from '../_constants';
 import stickySidebar from './_sticky-sidebar';
 import sections from './_sections';
 import Preloader from './_preloader';
@@ -13,6 +13,8 @@ import TopicAnim from './_topicAnim';
 import EVENT from './../communication/_events';
 import OBSERVER from './../communication/_observer';
 
+import { startAnimPage } from './_pageAnimation';
+
 
 DOC.ready(() => {
   const pageContact = 'contact';
@@ -20,10 +22,13 @@ DOC.ready(() => {
   const topic = '.js-topic';
   const preloader = new Preloader({ counterDuration: 0.6 });
   const home = $('[data-namespace="home"]');
+  const innerPageAnim = $('[data-scroll-page="inner"]');
+  const showHeader = 'is-show-inner-header';
 
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('transitionCompleted', (currentStatus) => {
+    
     if (currentStatus.namespace === pageContact) window.initMap();
     stickySidebar.init();
     initSplitRws();
@@ -35,7 +40,15 @@ DOC.ready(() => {
     }
     else {
       BODY.removeClass(FIXED);
-      TopicAnim.play();
+      BODY.removeClass(showHeader);
+      HTMLBODY.animate({
+        scrollTop: 0
+      }, 300, () => {
+        TopicAnim.play();
+        startAnimPage({
+          animTitle: false
+        });
+      });
     }
   } );
 
@@ -46,6 +59,9 @@ DOC.ready(() => {
   });
 
   if (!home.length) TopicAnim.play();
+  if (innerPageAnim.length) startAnimPage({
+    animTitle: false
+  });
   
   company.init();
   preloader.init();

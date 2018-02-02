@@ -1,3 +1,5 @@
+import { WIN, FIXED } from '../_constants';
+
 export default {
   animTo(container, duration, delay) {
     if (!container) return;
@@ -15,13 +17,16 @@ export default {
   title() {
     const rows = $('.js-topic [data-stagger="inner"]');
     const topicAnimHeight = $('.js-topic [data-anim-height]');
-    const topicHeight = topicAnimHeight.data('anim-height');
+    let topicHeight = (WIN.width() <= 767) 
+      ? topicAnimHeight.data('anim-height-mob') 
+      : topicAnimHeight.data('anim-height');
     const tm = new TimelineMax({pause: true});
     const stagger = new TimelineMax({pause: true}).staggerTo(rows, 0.6, {
       opacity: 1,
       y: 0,
       ease: Power1.easeInOut
     }, 0.15).play();
+    let addedHeight = false;
     if (!rows) return;
     if (topicAnimHeight.length) {
       tm
@@ -29,7 +34,20 @@ export default {
           height: topicHeight+'px',
           ease: Power1.easeInOut
         }, 0)
-        .add( stagger.play(), 0.45 );
+        .call( () => {
+          topicAnimHeight.addClass(FIXED);
+        }, null, null, 1 )
+        .add( stagger.play(), 0.45 )
+        .eventCallback( 'onComplete', () => { addedHeight = true; });
+        
+      WIN.on('resize', () => {
+        if (addedHeight) {
+          topicHeight = (WIN.width() <= 767) 
+            ? topicAnimHeight.data('anim-height-mob') 
+            : topicAnimHeight.data('anim-height');
+          topicAnimHeight.css('height', topicHeight);
+        }
+      });
     }
     else {
       stagger.play();
