@@ -2,6 +2,23 @@ import {ACTIVE, widthLG} from '../_constants';
 
 export default {
 
+  show() {
+    const title = $('.js-company-title [data-stagger="inner"]');
+    const diagram = $('.js-company-diagramm');
+    const content = $('.js-company-content');
+    if (!title.length) return;
+    new TimelineMax()
+      .addLabel('start', 0.15)
+      .staggerTo(title, 0.6, {
+        opacity: 1,
+        y: 0,
+        ease: Power1.easeInOut
+      }, 0.15)
+      .to([diagram, content], 0.6, {
+        opacity: 1
+      }, 'start');
+  },
+
   init() {
     $('.js-company').each((i, container) => {
       container = $(container);

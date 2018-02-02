@@ -58,11 +58,11 @@ title: Company
 						<div class="company__slide" data-id="{{loop.index}}">
 							{% if loop.first %}
 								<div class="company__header">
-									<h2 class="title-lg title-lg_simple company__title">Cross-industry expertise</h2>
+									<h2 class="title-lg title-lg_simple company__title js-company-title" data-stagger="rows">Cross-industry expertise</h2>
 								</div>
 							{% endif %}
 							<div class="company__inner">
-								<div class="company__content">
+								<div class="company__content js-company-content">
 									{% if item.label %}
 										<div class="company__label">{{item.label}}</div>
 									{% endif %}

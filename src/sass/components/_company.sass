@@ -1,3 +1,9 @@
+// .is-clear-transform
+// 	.company__title 
+// 		&.is-split [data-stagger=inner]
+// 			opacity: 1
+// 			transform: translate3d(0,0,0)
+
 .company
 	position: relative
 	padding: 0 40px
@@ -48,6 +54,7 @@
 		float: right
 		width: 100%
 		max-width: 380px
+		opacity: 0
 		+f(18px, 400, 28px)
 		text-align: left
 		+lg 
@@ -116,6 +123,7 @@
 		max-width: 1000px
 		height: 100vh
 		max-height: 900px
+		opacity: 0
 		+vertical
 		white-space: nowrap
 		transform: translate3d(0,-50%,0) scale(0.9)

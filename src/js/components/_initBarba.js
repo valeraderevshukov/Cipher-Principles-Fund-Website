@@ -56,6 +56,7 @@ DOC.ready(() => {
     sections.show();
     sections.parallaxInit();
     stickySidebar.init();
+    company.show();
   });
 
   if (!home.length) TopicAnim.play();
