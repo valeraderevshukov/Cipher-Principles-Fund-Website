@@ -1,0 +1,41 @@
+<svg width="174" height="201" viewBox="0 0 174 201" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>
+        Group 4
+    </title>
+    <defs>
+        <path id="a" d="M0 1h118l.012 31H149v170H0z"/>
+        <path id="b" d="M0 1h118l.012 31H149v150H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#2A487F" d="M142.998 0L174 31l-2 1-30.5-30.5z"/>
+        <g transform="translate(25 -1)">
+            <use fill="#FFF" xlink:href="#a"/>
+            <path stroke="#2A487F" stroke-width="2" d="M1 2v199h147V33h-30.988L117 2H1z"/>
+        </g>
+        <path fill="#D8D8D8" d="M141 33h31v7z"/>
+        <path fill="#2A487F" d="M144 44h14v2h-14z"/>
+        <path fill="#2A487F" d="M40 58h118v2H40z"/>
+        <path fill="#2A487F" d="M40 72h118v2H40z"/>
+        <path fill="#2A487F" d="M40 86h78v2H40z"/>
+        <path fill="#2A487F" d="M40 100h118v2H40z"/>
+        <path fill="#2A487F" d="M40 114h118v2H40z"/>
+        <path fill="#2A487F" d="M40 128h118v2H40z"/>
+        <path fill="#2A487F" d="M40 142h78v2H40z"/>
+        <g>
+            <path fill="#2A487F" d="M117.998 18L149 49l-2 1-30.5-30.5z"/>
+            <g transform="translate(0 17)">
+                <use fill="#FFF" xlink:href="#b"/>
+                <path stroke="#2A487F" stroke-width="2" d="M1 2v179h147V33h-30.988L117 2H1z"/>
+            </g>
+            <path fill="#D8D8D8" d="M116 51h31v7z"/>
+            <path fill="#2A487F" d="M15 62h118v2H15z"/>
+            <path fill="#2A487F" d="M15 76h118v2H15z"/>
+            <path fill="#2A487F" d="M15 90h118v2H15z"/>
+            <path fill="#2A487F" d="M15 104h78v2H15z"/>
+            <path fill="#2A487F" d="M15 118h118v2H15z"/>
+            <path fill="#2A487F" d="M15 132h118v2H15z"/>
+            <path fill="#2A487F" d="M15 146h118v2H15z"/>
+            <path fill="#2A487F" d="M15 160h78v2H15z"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,104 @@
+.research
+	margin: 0 auto
+	padding: 83px 20px 0
+	max-width: 1639px
+	&__row
+		padding: 92px 0 100px 19.5vw
+		+lg
+			padding-left: 0
+		+sm
+			padding: 40px 0 
+		&_mod
+			padding-bottom: 0
+			+sm
+				padding-bottom: 0
+		&:not(:first-child)
+			border-top: 1px solid rgba($black, .2) 
+		p
+			&:not(:first-child)
+				margin-top: 48px
+				+sm
+					margin-top: 28px
+	&__col
+		&:first-child
+			margin-top: 10px
+		&:not(:first-child)
+			+md
+				margin-top: 65px
+	&__text
+		max-width: 800px
+		font-size: 24px
+		line-height: 1.6
+		+md
+			max-width: 100%
+		+sm
+			font-size: 13px
+			line-height: 1.3
+	&__title
+		&:not(:last-child)
+			margin-bottom: 12px
+	&__title-medium
+		&:not(:last-child)
+			margin-bottom: 40px
+			+sm
+				margin-bottom: 24px
+	&__description
+		margin-top: 18px
+		+f(16px, null, 1.75)
+	&__date
+		opacity: .4 
+		+f(16px, null, 1.75)
+		&:not(:first-child)
+			margin-top: 21px
+	&__download
+		&:not(:first-child)
+			margin-top: 18px
+	&__doc
+		&:not(:first-child)
+			margin-top: 83px
+			+sm
+				margin-top: 30px
+
+.download
+	+f(16px, null, 1.75)
+	&__link
+		font-weight: 500 
+		color: $link 
+		+hover
+			span
+				border-color: $link 
+		.icon
+			margin: 2px 8px 0 0
+			font-size: 24px
+			vertical-align: top
+			display: inline-block
+		span
+			transition: border-color .3s
+			border-bottom: 1px solid transparent 
+	&__size
+		margin-left: 8px
+		opacity: .6 
+		display: inline
+.doc
+	+clr
+	&_mb
+		margin-bottom: -30px
+	&__img
+		float: left
+		padding-right: 10px
+		width: 217px
+		img
+			max-width: 100%
+			display: block
+	&__wrap
+		overflow: hidden
+	&__title
+		max-width: 380px
+		+sm
+			display: none
+	&__download
+		margin-top: 25px
+		.download__size
+			+sm
+				padding-left: 28px
+				display: block

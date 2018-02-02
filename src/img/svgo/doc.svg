@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="174px" height="201px" viewBox="0 0 174 201" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 1 118 1 118.011535 32 149 32 149 202 0 202"></polygon>
+        <polygon id="path-2" points="0 1 118 1 118.011535 32 149 32 149 182 0 182"></polygon>
+    </defs>
+    <g id="Research" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-420.000000, -2192.000000)">
+        <g id="Group-3" transform="translate(41.000000, 1801.000000)">
+            <g id="Group-4" transform="translate(379.000000, 390.000000)">
+                <g id="Group-3-Copy" transform="translate(25.000000, 0.000000)">
+                    <polygon id="Rectangle-5" fill="#2A487F" transform="translate(132.749138, 17.249931) rotate(-315.000000) translate(-132.749138, -17.249931) " points="110.828191 16.1900049 154.670085 16.1887317 153.963064 18.311131 110.82899 18.3105268"></polygon>
+                    <g id="Rectangle">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#2A487F" stroke-width="2" d="M1,2 L1,201 L148,201 L148,33 L117.011907,33 L117.000372,2 L1,2 Z"></path>
+                    </g>
+                    <polygon id="Rectangle-7" fill="#D8D8D8" points="116 34 147 34 147 41"></polygon>
+                    <rect id="Rectangle-3" fill="#2A487F" x="119" y="45" width="14" height="2"></rect>
+                    <rect id="Rectangle-3-Copy" fill="#2A487F" x="15" y="59" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-2" fill="#2A487F" x="15" y="73" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-3" fill="#2A487F" x="15" y="87" width="78" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-7" fill="#2A487F" x="15" y="101" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-6" fill="#2A487F" x="15" y="115" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-5" fill="#2A487F" x="15" y="129" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-4" fill="#2A487F" x="15" y="143" width="78" height="2"></rect>
+                </g>
+                <g id="Group-3-Copy-2" transform="translate(0.000000, 18.000000)">
+                    <polygon id="Rectangle-5" fill="#2A487F" transform="translate(132.749138, 17.249931) rotate(-315.000000) translate(-132.749138, -17.249931) " points="110.828191 16.1900049 154.670085 16.1887317 153.963064 18.311131 110.82899 18.3105268"></polygon>
+                    <g id="Rectangle">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <path stroke="#2A487F" stroke-width="2" d="M1,2 L1,181 L148,181 L148,33 L117.011907,33 L117.000372,2 L1,2 Z"></path>
+                    </g>
+                    <polygon id="Rectangle-7" fill="#D8D8D8" points="116 34 147 34 147 41"></polygon>
+                    <rect id="Rectangle-3" fill="#2A487F" x="15" y="45" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy" fill="#2A487F" x="15" y="59" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-2" fill="#2A487F" x="15" y="73" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-3" fill="#2A487F" x="15" y="87" width="78" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-7" fill="#2A487F" x="15" y="101" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-6" fill="#2A487F" x="15" y="115" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-5" fill="#2A487F" x="15" y="129" width="118" height="2"></rect>
+                    <rect id="Rectangle-3-Copy-4" fill="#2A487F" x="15" y="143" width="78" height="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

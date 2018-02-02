@@ -7,7 +7,7 @@
 	z-index: 102
 	height: 83px
 	color: $black 
-	transition: transform .3s, opacity .3s
+	transition: transform .3s, opacity .3s, visibility .3s
 	background-color: $alabaster 
 	+md
 		padding-top: 20px
@@ -33,10 +33,12 @@
 		.is-show-inner-header &
 			transform: translateY(0)
 			opacity: 1
+			visibility: visible
 	[data-scroll-page="inner"] &
 		position: fixed
 		transform: translateY(-123px)
 		opacity: 0
+		visibility: hidden
 	&[data-anim-from]
 		position: absolute
 	&_anim,
@@ -49,6 +51,7 @@
 		position: fixed
 		.is-show-inner-header &
 			opacity: 0
+			visibility: hidden
 	&_anim
 		position: fixed
 		z-index: 101
@@ -144,9 +147,14 @@
 		&.is-active
 			.nav__link
 				opacity: 1
+				color: $green 
+				.header_anim &,
+				.header_in &,
+				.header_blue &
+					color: $white 
 	&__link
 		opacity: .6
-		color: $black 
+		color: $black  
 		transition: opacity .3s ease-in-out
 		+md
 			color: $white 
@@ -154,6 +162,13 @@
 			opacity: 1
 		&.is-active
 			opacity: 1
+			color: $green 
+			[data-anim-page="full"] &
+				color: $green
+			.header_anim &,
+			.header_in &,
+			.header_blue &
+				color: $white 
 		.header_anim &,
 		.header_in &,
 		.header_blue &
