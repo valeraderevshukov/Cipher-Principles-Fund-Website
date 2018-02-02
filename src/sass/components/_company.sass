@@ -8,7 +8,7 @@
 		position: relative
 	&__header
 		position: absolute
-		top: 0
+		top: 100px
 		left: 0
 		right: 0
 		padding: 20px
@@ -21,6 +21,7 @@
 		text-align: left
 	&__slide
 		position: relative
+		padding-top: 100px
 		padding-left: 98px
 		padding-right: 98px
 		height: 100vh
@@ -32,7 +33,7 @@
 			height: auto
 			min-height: auto
 		&[data-id="1"]
-			padding-top: 200px
+			padding-top: 300px
 			+lg 
 				padding-top: 0
 			.company__subtitle
@@ -110,7 +111,7 @@
 		position: absolute
 		top: 50%
 		left: 0
-		padding: 240px 40px 40px
+		padding: 340px 40px 40px
 		width: calc(100% - 480px)
 		max-width: 1000px
 		height: 100vh
@@ -131,15 +132,20 @@
 			height: auto
 			transform: translate3d(0,0,0) scale(0.9)
 		&.is-active 
-			padding-top: 40px
+			padding-top: 140px
 			transform: translate3d(0,-50%,0) scale(1)
 			+lg
+				padding-top: 40px
 				transform: translate3d(0,0,0) scale(1)
 			[data-diagramm-inner]
 				opacity: 1
+			.company__logo
+				padding-top: 140px
+				+lg
+					padding-top: 40px
 		&:before 
 			+lg 
-				display: none		
+				display: none
 		svg 
 			display: inline-block
 			vertical-align: middle
@@ -151,3 +157,20 @@
 		[data-diagramm-inner]
 			opacity: 0
 			transition: opacity 0.5s
+
+	&__logo 
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 340px 40px 40px
+		+vertical
+		white-space: nowrap
+		+gpu
+		transition: padding 0.5s
+		pointer-events: none
+		img 
+			display: inline-block
+			vertical-align: middle
+			max-height: 16%
