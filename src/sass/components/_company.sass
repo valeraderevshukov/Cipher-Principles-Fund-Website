@@ -108,15 +108,16 @@
 					bottom: 4px
 	&__diagramm
 		position: absolute
-		top: 0
+		top: 50%
 		left: 0
 		padding: 240px 40px 40px
 		width: calc(100% - 480px)
 		max-width: 1000px
 		height: 100vh
+		max-height: 900px
 		+vertical
 		white-space: nowrap
-		transform: translate3d(0,0,0) scale(0.9)
+		transform: translate3d(0,-50%,0) scale(0.9)
 		transition: transform 0.5s, padding 0.5s
 		pointer-events: none
 		+lg
@@ -128,9 +129,12 @@
 			width: 100%
 			max-width: 360px
 			height: auto
+			transform: translate3d(0,0,0) scale(0.9)
 		&.is-active 
 			padding-top: 40px
-			transform: translate3d(0,0,0) scale(1)
+			transform: translate3d(0,-50%,0) scale(1)
+			+lg
+				transform: translate3d(0,0,0) scale(1)
 			[data-diagramm-inner]
 				opacity: 1
 		&:before 
