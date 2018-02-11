@@ -33,7 +33,6 @@ DOC.ready(() => {
     stickySidebar.init();
     initSplitRws();
     initDisclaimer();
-    company.init();
     if (currentStatus.namespace === pageHome) {
       preloader.init();
       BODY.addClass(FIXED);
@@ -56,6 +55,7 @@ DOC.ready(() => {
     sections.show();
     sections.parallaxInit();
     stickySidebar.init();
+    // company.init();
     company.show();
   });
 

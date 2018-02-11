@@ -1,4 +1,5 @@
-import {ACTIVE, widthLG} from '../_constants';
+import {ACTIVE, FIXED, widthLG, widthMD, WIN} from '../_constants';
+import {GET_WINDOW_WIDTH} from '../_utils';
 
 export default {
 
@@ -20,53 +21,105 @@ export default {
   },
 
   init() {
-    $('.js-company').each((i, container) => {
-      container = $(container);
-      const slider = container.find('.js-company-slider');
-      const diagramm = container.find('.js-company-diagramm');
-      const diagrammSVG = container.find('.js-company-diagramm svg');
-      const dots = container.find('.js-company-dots');
-      const bullets = container.find('.js-company-bullet');
+    const setDiagramRotate = (slide, diagramm) => {
+      const id = slide.data('id');
+      const winTop = WIN.scrollTop();
+      const slideTop = slide.offset().top;
+      const slideHeight = slide.outerHeight();
 
-      slider
-        .slick({
-          vertical: true,
-          verticalSwiping: true,
-          infinite: false,
-          arrows: false,
-          responsive: [
-            {
-              breakpoint: widthLG + 1,
-              settings: {
-                vertical: false,
-                verticalSwiping: false,
-                infinite: false,
-                arrows: false,
-                fade: true,
-                adaptiveHeight: true
-              }
-            }
-          ]
-        })
-        .on('beforeChange', (e, slick, prev, next) => {
-          next > 0 ? diagramm.add(dots).addClass(ACTIVE) : diagramm.add(dots).removeClass(ACTIVE);
-          if (next >= 1) {
+      if (id === 0 && winTop > slideTop + slideHeight/2) diagramm.addClass(ACTIVE);
+      if (id === 0 && winTop < slideTop + slideHeight/2) diagramm.removeClass(ACTIVE);
+
+
+      if (id >= 1 && winTop > slideTop - slideHeight/2) {
+        const step = 360/3;
+        const angle = step*(id-1);
+        diagramm
+          .find('svg')
+          .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
+      }
+    };
+
+    WIN.on('scroll resize', () => {
+      const winTop = WIN.scrollTop();
+      const winBottom = winTop + WIN.outerHeight();
+
+      $('.js-company').each((i, container) => {
+        container = $(container);
+        const slider = container.find('.js-company-slider');
+        const slides = container.find('.js-company-slide');
+        const diagramm = container.find('.js-company-diagramm');
+        const dots = container.find('.js-company-dots');
+        const bullets = container.find('.js-company-bullet');
+
+        const containerTop = container.offset().top;
+        const containerHeight = container.outerHeight();
+        const containerBottom = containerTop + containerHeight;
+
+        if (winTop >= containerTop && winBottom < containerBottom) {
+          diagramm
+            .css('top', 0)
+            .addClass(FIXED);
+
+          slides.each((i, slide) => setDiagramRotate($(slide), diagramm));
+        } else {
+          diagramm.removeClass(FIXED);
+          winBottom > containerBottom && diagramm.css('top', containerHeight - diagramm.outerHeight());
+        }
+      });
+    });
+
+    WIN.on('resize load', () => {
+      
+      $('.js-company').each((i, container) => {
+        container = $(container);
+        const slider = container.find('.js-company-slider');
+        const sliderInited = slider.hasClass('slick-initialized');
+        const dots = container.find('.js-company-dots');
+        const bullets = container.find('.js-company-bullet');
+        const diagramm = container.find('.js-company-diagramm');
+
+        if (GET_WINDOW_WIDTH(widthMD) && !sliderInited) {
+          slider.on('init', () => {
+            const next = 0;
             const step = 360/3;
-            const id = next-1;
-            const angle = step*id;
+            const angle = step*next;
+            diagramm
+              .find('svg')
+              .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
             bullets
               .removeClass(ACTIVE)
-              .eq(id)
+              .eq(next)
               .addClass(ACTIVE);
-            diagrammSVG.css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
-          }
-        });
+          });
+          slider
+            .slick({
+              infinite: false,
+              arrows: false,
+              fade: true,
+              adaptiveHeight: true
+            })
+            .on('beforeChange', (e, slick, prev, next) => {
+              const step = 360/3;
+              const angle = step*next;
+              diagramm
+                .find('svg')
+                .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
+              bullets
+                .removeClass(ACTIVE)
+                .eq(next)
+                .addClass(ACTIVE);
+            });
 
-      bullets.on('click', e => {
-        e.preventDefault();
-        console.log($(e.currentTarget).index() + 1);
-        slider.slick('slickGoTo', $(e.currentTarget).index() + 1);
+          bullets.on('click', e => {
+            e.preventDefault();
+            slider.slick('slickGoTo', $(e.currentTarget).index());
+          });
+        } else if (!GET_WINDOW_WIDTH(widthMD) && sliderInited) {
+          slider.slick('unslick');
+        }
       });
+
     });
   }
 

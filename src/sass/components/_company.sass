@@ -7,24 +7,31 @@
 .company
 	position: relative
 	padding: 0 40px
+	margin: 0 auto
 	max-width: 1680px
-	+lg 
+	+md 
 		padding: 0 20px
 	&__container
-		position: relative
+		+md
+			padding-top: 55px
 	&__header
 		position: absolute
 		top: 100px
 		left: 0
 		right: 0
 		padding: 20px
-		+lg 
+		+md 
 			position: relative
-			padding: 0 0 30px
+			top: 0
+			padding: 0 0 33px
 	&__title
 		margin: 0 auto
 		max-width: 800px
 		text-align: left
+		+lg 
+			max-width: 600px
+		+md 
+			max-width: 100%
 	&__slide
 		position: relative
 		padding-top: 100px
@@ -34,13 +41,13 @@
 		min-height: 600px
 		+clr
 		+vertical
-		+lg 
+		+md 
 			padding: 0 0 40px
 			height: auto
 			min-height: auto
 		&[data-id="1"]
 			padding-top: 300px
-			+lg 
+			+md 
 				padding-top: 0
 			.company__subtitle
 				margin-bottom: 20px
@@ -57,17 +64,22 @@
 		opacity: 0
 		+f(18px, 400, 28px)
 		text-align: left
-		+lg 
+		+md 
 			float: none
 			max-width: 100%
 			+f(13px, null, 18px)
 	&__subtitle
 		margin-bottom: 12px
-		+lg 
+		+md 
 			margin-bottom: 20px
+		&_first
+			+md 
+				margin-left: -2px
+				margin-right: -5px
+				margin-bottom: 39px
 	&__label
 		margin-bottom: 15px
-		+lg 
+		+md 
 			margin-bottom: 20px
 	&__dots
 		position: absolute
@@ -76,13 +88,13 @@
 		right: 8px
 		opacity: 0
 		transition: opacity 0.5s
-		+lg
-			position: relative
-			top: auto 
-			right: auto
+		+md
+			position: relative !important
+			top: auto !important
+			right: auto !important
 			opacity: 1
 			text-align: center
-			pointer-events: none
+			// pointer-events: none
 		&.is-active
 			opacity: 1
 		span
@@ -91,7 +103,7 @@
 			width: 28px
 			height: 28px
 			cursor: pointer
-			+lg 
+			+md 
 				display: inline-block
 				vertical-align
 				width: 14px
@@ -109,50 +121,52 @@
 				border-radius: 50%
 				opacity: 1
 				background: rgba($black, 0.2)
-				+lg 
+				+md 
 					top: 4px
 					left: 4px
 					right: 4px
 					bottom: 4px
 	&__diagramm
 		position: absolute
-		top: 50%
-		left: 0
-		padding: 340px 40px 40px
-		width: calc(100% - 480px)
+		top: 0
+		// left: 0
+		padding: 330px 40px 30px
+		width: calc(100% - 580px)
 		max-width: 1000px
 		height: 100vh
-		max-height: 900px
+		// max-height: 900px
 		opacity: 0
-		+vertical
 		white-space: nowrap
-		transform: translate3d(0,-50%,0) scale(0.9)
+		+vertical
+		transform: translate3d(0,0,0) scale(1)
 		transition: transform 0.5s, padding 0.5s
-		pointer-events: none
-		+lg
-			position: relative
-			top: auto
-			left: auto
-			padding: 40px 0
-			margin: 0 auto
+		+md
+			position: relative !important
+			top: auto !important
+			right: auto !important
+			padding: 0
+			margin: 0 auto 10px
 			width: 100%
 			max-width: 360px
 			height: auto
-			transform: translate3d(0,0,0) scale(0.9)
+			transform: translate3d(0,0,0) scale(1)
+		&.is-fixed
+			position: fixed
 		&.is-active 
-			padding-top: 140px
-			transform: translate3d(0,-50%,0) scale(1)
-			+lg
-				padding-top: 40px
+			padding-top: 130px
+			transform: translate3d(0,0,0) scale(1)
+			+md
+				padding-top: 0
 				transform: translate3d(0,0,0) scale(1)
 			[data-diagramm-inner]
 				opacity: 1
 			.company__logo
-				padding-top: 140px
-				+lg
+				padding-top: 130px
+				// padding-top: 40px
+				+md
 					padding-top: 40px
 		&:before 
-			+lg 
+			+md 
 				display: none
 		svg 
 			display: inline-block
@@ -160,11 +174,13 @@
 			max-width: 100%
 			max-height: 100%
 			transition: transform 0.7s
-			+lg 
+			+md 
 				display: block
 		[data-diagramm-inner]
 			opacity: 0
 			transition: opacity 0.5s
+			+md 
+				opacity: 1
 
 	&__logo 
 		position: absolute
@@ -172,13 +188,19 @@
 		left: 0
 		right: 0
 		bottom: 0
-		padding: 340px 40px 40px
+		padding: 330px 40px 30px
 		+vertical
 		white-space: nowrap
 		+gpu
 		transition: padding 0.5s
 		pointer-events: none
+		+md 
+			padding-top: 40px
 		img 
 			display: inline-block
 			vertical-align: middle
+			max-width: 34%
 			max-height: 16%
+			+md 
+				max-width: 40%
+				max-height: 20%

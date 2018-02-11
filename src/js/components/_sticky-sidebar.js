@@ -9,6 +9,14 @@ const headerLinks = $('.header:not(.header_anim) [data-nav-href]');
 const headerAnimLinks = $('.header_anim [data-nav-href]');
 const blockItem = $('[data-section]');
 
+const linkPosition = (link, line) => {
+  const linkPosition = link.position().top;
+  const linkHeight = link.outerHeight()/2;
+  const lineHeight = line.outerHeight()/2;
+
+  line.css('transform', `translate3d(0,${linkPosition + linkHeight - lineHeight}px,0)`);
+};
+
 function onScroll(event) {
   const sidebar = $('.js-sticky-sidebar');
   if (!sidebar) return;
@@ -22,16 +30,18 @@ function onScroll(event) {
     const id = that.data('section');
     const currentLink = $('[data-href="'+id+'"], .header:not(.header_anim) [data-nav-href="'+id+'"]');
     const currentSidebarLink = $('[data-href="'+id+'"]');
-    
+
     if (!currentSidebarLink.length) return;
-    const topPos = that.offset().top - topPadding;
+    const topPos = that.offset().top - (topPadding + 5);
     const bottomPos = topPos + that.outerHeight();
     const currentPosition = currentSidebarLink.position().top;
+    const currentLinkHeight = currentSidebarLink.outerHeight()/2;
+    const lineHeight = line.outerHeight()/2;
 
     if ( topPos <= scrollPos && bottomPos > scrollPos) {
       allLinks.removeClass(ACTIVE);
       currentLink.addClass(ACTIVE);
-      line.css('transform', `translate3d(0,${currentPosition}px,0)`);
+      linkPosition(currentSidebarLink, line);
     }
   });
 };
@@ -73,6 +83,20 @@ BODY.on('click', '.header_anim [data-nav-href]', function(e) {
   scrollToSection(this, 'nav-href', true);
 });
 
+const hoverOnLinks = () => {
+  const sidebar = $('.js-sticky-sidebar');
+  const line = sidebar.find('[data-line]');
+  const links = sidebar.find('[data-href]');
+
+  links
+    .mouseenter(e => {
+      linkPosition($(e.currentTarget), line);
+    }).mouseleave(e => {
+      const active = links.hasClass(ACTIVE) ? links.filter(`.${ACTIVE}`) : links.first();
+      linkPosition(active, line);
+    });
+};
+
 export default {
 
   toggleLine(state) {
@@ -95,6 +119,8 @@ export default {
     
     sticky.addEventListener('affix.top.stickySidebar', () => this.toggleLine(true));
     sticky.addEventListener('affix.static.stickySidebar', () => this.toggleLine(false));
+
+    hoverOnLinks();
   
     this.toggleLine(WIN.scrollTop() >= $('[data-section]').first().offset().top);
 
