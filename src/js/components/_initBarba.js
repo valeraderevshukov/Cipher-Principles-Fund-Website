@@ -12,6 +12,7 @@ import TopicAnim from './_topicAnim';
 
 import EVENT from './../communication/_events';
 import OBSERVER from './../communication/_observer';
+import './_accordion';
 
 import { startAnimPage } from './_pageAnimation';
 
@@ -33,6 +34,7 @@ DOC.ready(() => {
     stickySidebar.init();
     initSplitRws();
     initDisclaimer();
+    company.initSlider();
     if (currentStatus.namespace === pageHome) {
       preloader.init();
       BODY.addClass(FIXED);
