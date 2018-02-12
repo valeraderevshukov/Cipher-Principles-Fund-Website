@@ -21,8 +21,16 @@
 		z-index: 1
 		background-position: 40% 21%
 		background-repeat: no-repeat
+		+sm
+			display: none
 		&[data-anim-from="right-20"]
 			position: absolute
+		&_mob
+			display: none
+			background-position: -50% 20%
+			background-size: 142% auto 
+			+sm
+				display: block
 	&__left
 		position: absolute
 		top: 0
@@ -89,6 +97,7 @@
 		position: absolute
 		right: 19px
 		bottom: 26px 
+		opacity: 0
 		+md
 			bottom: 80px
 		

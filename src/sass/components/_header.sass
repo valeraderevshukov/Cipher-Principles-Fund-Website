@@ -5,7 +5,7 @@
 	right: 0
 	padding-top: 28px
 	z-index: 102
-	height: 83px
+	height: 80px
 	color: $black 
 	transition: transform .3s, opacity .3s, visibility .3s
 	background-color: $alabaster 
@@ -65,6 +65,8 @@
 			position: absolute
 			bottom: 84px
 			left: 40px
+		+sm
+			bottom: 94px
 	&__share,
 	&__mail
 		position: absolute
@@ -75,9 +77,13 @@
 	&__share
 		top: 240px
 		font-size: 20px
+		+sm
+			top: 170px
 	&__mail
 		bottom: 88px
 		font-size: 14px
+		+sm
+			bottom: 98px
 	&__wrap
 		+md
 			position: absolute
@@ -91,16 +97,16 @@
 			min-height: 100vh
 			overflow: auto
 			transition: opacity .3s ease-in-out, visibility .3s ease-in-out
-			background-image: linear-gradient(140deg, #2D3353 0%, #3E3E88 81%)
+			background-image: linear-gradient(-143deg, #0A2F2A 0%, #2D5442 89%)
 			&.is-open
 				opacity: 1
 				visibility: visible
 	&__logo
 		transform: translate3d(0,0,0)
-		transition: height .3s
+		transition: transform .35s
 		.js-header-main.is-fixed &
 			+md
-				height: 34px
+				transform: scale(0.6) translate3d(-40px,-30px,0)
 		
 .logo
 	position: relative
@@ -114,7 +120,10 @@
 		width: auto
 		display: block
 	svg,
-	svg g
+	svg g,
+	svg path,
+	svg poligon,
+	svg mask
 		fill: $heavyMetal
 		transition: fill .3s ease-in-our
 		.is-active &
@@ -124,6 +133,16 @@
 		.header_in &,
 		.header_blue &
 			fill: $white
+	svg [stroke-linecap="square"]
+		stroke: $heavyMetal
+		transition: fill .3s ease-in-our
+		.is-active &
+			+md
+				stroke: $white 
+		.header_anim &,
+		.header_in &,
+		.header_blue &
+			stroke: $white
 .nav
 	float: left
 	margin-left: 167px
@@ -147,7 +166,6 @@
 		&.is-active
 			.nav__link
 				opacity: 1
-				color: $green 
 				.header_anim &,
 				.header_in &,
 				.header_blue &
@@ -164,11 +182,13 @@
 			opacity: 1
 			color: $green 
 			[data-anim-page="full"] &
-				color: $green
+				color: $white 
 			.header_anim &,
 			.header_in &,
 			.header_blue &
 				color: $white 
+				+md
+					color: $white  
 		.header_anim &,
 		.header_in &,
 		.header_blue &
@@ -200,6 +220,7 @@
 		top: 50% 
 		right: 0
 		margin-top: -2px
+		transition: transform .35s cubic-bezier(0.77, 0, 0.175, 1) 
 		+arr(7,4,$black,b)
 		.header_anim &,
 		.header_in &,
@@ -231,7 +252,7 @@
 		opacity: 0
 		transform: translateY(8px)
 		visibility: hidden
-		transition: opacity 0.1s ease-in, visibility 0.1s ease-in, transform 0.1s ease-in
+		transition: opacity .35s cubic-bezier(0.77, 0, 0.175, 1), visibility .35s cubic-bezier(0.77, 0, 0.175, 1), transform .35s cubic-bezier(0.77, 0, 0.175, 1)
 		+md
 			margin: 0 0 12px
 		.header__wrap &

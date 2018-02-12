@@ -5,6 +5,7 @@ export default class Preloader {
 
   constructor(options) {
     this._counterDuration = options.counterDuration;
+    this._storeFlug = null;
   }
   logo() {
     const counterFirstGroup = { score: 1 };
@@ -128,8 +129,21 @@ export default class Preloader {
   init() {
     const preloader = $('.js-preloader');
     if (!preloader.length) return;
-    this.gragient();
-    this.logo();
-    this.progress();
+    if (!this._storeFlug) {
+      window.sessionStorage.setItem('preloader',true);
+      this._storeFlug = window.sessionStorage.getItem('preloader');
+
+      this.gragient();
+      this.logo();
+      this.progress();
+    }
+    else {
+      const preloader = $('.js-preloader');
+      TopicAnim.play();
+      HTMLBODY.animate(() => {
+        scrollTop: 0;
+      }, 0);
+      preloader.remove();
+    }
   }
 }

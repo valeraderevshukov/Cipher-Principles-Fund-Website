@@ -9,7 +9,30 @@ nameSpace: home
 
 	{{ header.block({
 		class: "anim",
-		linkClass: 1
+		linkClass: 1,
+		logoNoLink: true,
+		pages: [
+			{
+				name: "Fund",
+				url: "#",
+				target: "what",
+				class: "fundClass"
+			},
+			{
+				name: "Company",
+				url: "./company.html",
+				class: "companyClass"
+			},
+			{
+				name: "Research",
+				url: "./research.html",
+				class: "researchClass"
+			},
+			{
+				name: "Contact",
+				url: "./contact.html",
+				class: "contactClass"
+		}]
 	}) }}
 	{{ topic.block({
 		home: true,
