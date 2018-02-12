@@ -5,8 +5,10 @@ export default {
 
   show() {
     const title = $('.js-company-title [data-stagger="inner"]');
-    const diagram = $('.js-company-diagramm');
+    const diagramm = $('.js-company-diagramm');
     const content = $('.js-company-content');
+    const diagrammHeaders = $('[data-diagramm-head]');
+
     if (!title.length) return;
     new TimelineMax()
       .addLabel('start', 0.15)
@@ -15,9 +17,85 @@ export default {
         y: 0,
         ease: Power1.easeInOut
       }, 0.15)
-      .to([diagram, content], 0.6, {
+      .to([diagramm, content], 0.6, {
         opacity: 1
-      }, 'start');
+      }, 'start')
+      .add(() => {
+        diagrammHeaders.addClass(ACTIVE);
+      }, 'start', '+=0.5');
+  },
+
+  initSlider() {
+    $('.js-company').each((i, container) => {
+      container = $(container);
+      const slider = container.find('.js-company-slider');
+      const sliderInited = slider.hasClass('slick-initialized');
+      const dots = container.find('.js-company-dots');
+      const bullets = container.find('.js-company-bullet');
+      const diagramm = container.find('.js-company-diagramm');
+
+      if (GET_WINDOW_WIDTH(widthMD) && !sliderInited) {
+        slider.on('init', () => {
+          const next = 0;
+          const step = 360/3;
+          const angle = step*next;
+          diagramm
+            .find('svg')
+            .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
+          bullets
+            .removeClass(ACTIVE)
+            .eq(next)
+            .addClass(ACTIVE);
+          const slide = slider.find(`[data-id="${next+1}"]`);
+          const items = slide.find('[data-anim-from="bottom"]');
+          slide.length && !slide.get(0).wasAnimatied && items.length && new TimelineMax()
+            .staggerTo(items, 0.75, {
+              opacity: 1,
+              y: 0,
+              ease: Expo.easeOut
+            }, '0.2');
+
+          if (slide.length) slide.get(0).wasAnimatied = true;
+        });
+        slider
+          .slick({
+            infinite: false,
+            arrows: false,
+            fade: true,
+            adaptiveHeight: true
+          })
+          .on('beforeChange', (e, slick, prev, next) => {
+            const step = 360/3;
+            const angle = step*next;
+            diagramm
+              .find('svg')
+              .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
+            bullets
+              .removeClass(ACTIVE)
+              .eq(next)
+              .addClass(ACTIVE);
+          })
+          .on('afterChange', (e, slick, id) => {
+            const slide = slider.find(`[data-id="${id+1}"]`);
+            const items = slide.find('[data-anim-from="bottom"]');
+            slide.length && !slide.get(0).wasAnimatied && items.length && new TimelineMax()
+              .staggerTo(items, 0.75, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut
+              }, '0.2');
+
+            if (slide.length) slide.get(0).wasAnimatied = true;
+          });
+
+        bullets.on('click', e => {
+          e.preventDefault();
+          slider.slick('slickGoTo', $(e.currentTarget).index());
+        });
+      } else if (!GET_WINDOW_WIDTH(widthMD) && sliderInited) {
+        slider.slick('unslick');
+      }
+    });
   },
 
   init() {
@@ -37,6 +115,15 @@ export default {
         diagramm
           .find('svg')
           .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
+
+        const items = slide.find('[data-anim-from="bottom"]');
+        !slide.get(0).wasAnimatied && items.length && new TimelineMax()
+          .staggerTo(items, 0.75, {
+            opacity: 1,
+            y: 0,
+            ease: Expo.easeOut
+          }, '0.2');
+        slide.get(0).wasAnimatied = true;
       }
     };
 
@@ -69,58 +156,7 @@ export default {
       });
     });
 
-    WIN.on('resize load', () => {
-      
-      $('.js-company').each((i, container) => {
-        container = $(container);
-        const slider = container.find('.js-company-slider');
-        const sliderInited = slider.hasClass('slick-initialized');
-        const dots = container.find('.js-company-dots');
-        const bullets = container.find('.js-company-bullet');
-        const diagramm = container.find('.js-company-diagramm');
-
-        if (GET_WINDOW_WIDTH(widthMD) && !sliderInited) {
-          slider.on('init', () => {
-            const next = 0;
-            const step = 360/3;
-            const angle = step*next;
-            diagramm
-              .find('svg')
-              .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
-            bullets
-              .removeClass(ACTIVE)
-              .eq(next)
-              .addClass(ACTIVE);
-          });
-          slider
-            .slick({
-              infinite: false,
-              arrows: false,
-              fade: true,
-              adaptiveHeight: true
-            })
-            .on('beforeChange', (e, slick, prev, next) => {
-              const step = 360/3;
-              const angle = step*next;
-              diagramm
-                .find('svg')
-                .css('transform', `translate3d(0,0,0) rotate(${-angle}deg)`);
-              bullets
-                .removeClass(ACTIVE)
-                .eq(next)
-                .addClass(ACTIVE);
-            });
-
-          bullets.on('click', e => {
-            e.preventDefault();
-            slider.slick('slickGoTo', $(e.currentTarget).index());
-          });
-        } else if (!GET_WINDOW_WIDTH(widthMD) && sliderInited) {
-          slider.slick('unslick');
-        }
-      });
-
-    });
+    WIN.on('resize load', () => this.initSlider());
   }
 
 };

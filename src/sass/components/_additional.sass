@@ -8,6 +8,9 @@
 		letter-spacing: -0.5px
 		+sm 
 			font-size: 14px
+		&.is-active
+			.icon 
+				transform: translate3d(0,-50%,0) rotate(-180deg)
 		.icon 
 			position: absolute
 			top: 50%
@@ -24,8 +27,8 @@
 				padding-left: 27px
 				+sm 
 					padding-left: 19px
-	// &__container
-		// display: none
+	&__container
+		display: none
 	&__row 
 		padding: 24px 0 43px
 		margin: 0 -20px 

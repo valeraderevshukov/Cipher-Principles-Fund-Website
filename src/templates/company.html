@@ -29,7 +29,9 @@ title: Company
 					<div class="company__inner">
 						<div class="company__content js-company-content">
 							<h3 class="title-md company__subtitle company__subtitle_first">Insight and specialist knowledge drive growth</h3>
-							<p>The team of the fund is represented by the highly-qualified experts in the areas of Technology, Finance, Operations and Research. Having embraced the highest standards in their professions, our team members possess a sound reputational capital together with the right mix of skills, talent and capacity. Their insight and specialist knowledge will help the fund to continually improve its performance.</p>
+							<div>
+								<p>The team of the fund is represented by the highly-qualified experts in the areas of Technology, Finance, Operations and Research. Having embraced the highest standards in their professions, our team members possess a sound reputational capital together with the right mix of skills, talent and capacity. Their insight and specialist knowledge will help the fund to continually improve its performance.</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -66,10 +68,12 @@ title: Company
 							<div class="company__inner">
 								<div class="company__content js-company-content">
 									{% if item.label %}
-										<div class="company__label">{{item.label}}</div>
+										<div class="company__label" data-anim-from="bottom">{{item.label}}</div>
 									{% endif %}
-									<h3 class="title-md company__subtitle">{{item.title}}</h3>
-									<p>{{item.content}}</p>
+									<h3 class="title-md company__subtitle" data-anim-from="bottom">{{item.title}}</h3>
+									<div data-anim-from="bottom">
+										<p>{{item.content}}</p>
+									</div>
 								</div>
 							</div>
 						</div>

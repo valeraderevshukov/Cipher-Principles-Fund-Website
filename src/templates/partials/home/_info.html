@@ -34,12 +34,12 @@
 			</div>
 		{% endfor %}
 	</div>
-	<div class="additional info__additional">
-		<a href="#" class="additional__link" data-anim-from="bottom">
+	<div class="additional info__additional js-accordion">
+		<a href="#" class="additional__link js-accordion-control" data-anim-from="bottom">
 			{{mixins.icon('down')}}
 			<span>Looking for a managed account?</span>
 		</a>
-		<div class="additional__container">
+		<div class="additional__container js-accordion-container">
 			<div class="additional__row">
 				{% for item in [
 					'For clients who either prefer or require more control over their individual investment choices, Cipher Principles has a dedicated team who can give direction and proactive advice based on market trends and analysis.',
