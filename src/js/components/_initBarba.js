@@ -29,7 +29,7 @@ DOC.ready(() => {
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('transitionCompleted', (currentStatus) => {
-    
+    window.scrollFlug = true;
     if (currentStatus.namespace === pageContact) window.initMap();
     stickySidebar.init();
     initSplitRws();

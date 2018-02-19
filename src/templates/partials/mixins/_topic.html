@@ -15,7 +15,7 @@
 					<a href="mailto:info@cipherprinciples.com" class="topic__mail mail">info@cipherprinciples.fund</a>
 				</div>
 				<div class="topic__wrap js-topic-wrap">
-					<h1 class="topic__title title-lg" data-stagger="rows">{{ props.title }}</h1>
+					<h1 class="topic__title title-lg" data-stagger="rows">{{ props.title | safe }}</h1>
 					<div class="topic__footer js-topic-footer" data-anim-from="top-10">
 						<button class="btn js-start-anim-trigger" type="button">{{ mixins.icon('arr-bottom') }} Learn more</button>
 						<a href="#" class="btn-transparent">Our research</a>

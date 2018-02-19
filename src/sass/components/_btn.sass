@@ -4,9 +4,15 @@
 	padding: 17px 48px
 	border-radius: 4px
 	color: $black
-	background: $white
+	transition: color .3s, background-color .3s
+	background-color: $white
 	font-family: $graphik
 	+f(16px, 700, 1.5)
+	+hover
+		color: $white 
+		background-color: #0171BB
+		.icon
+			fill: $white
 	+sm 
 		padding: 12px 32px
 		border-radius: 3px
@@ -15,6 +21,8 @@
 		margin-right: 14px
 		font-size: 9px
 		vertical-align: middle
+	.icon
+		transition: fill .3s
 	&_green
 		color: $white
 		background: $green 

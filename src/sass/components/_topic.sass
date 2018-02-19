@@ -19,8 +19,12 @@
 		right: 0
 		bottom: 0
 		z-index: 1
-		background-position: 40% 21%
+		background-position: 38% 26%
 		background-repeat: no-repeat
+		+xl
+			background-position: 50% 26%
+		.topic_in &
+			background-position: 39% 37% 
 		+sm
 			display: none
 		&[data-anim-from="right-20"]
@@ -52,13 +56,14 @@
 			left: 40px
 	&__inner
 		position: relative
+		z-index: 1
 		padding: 170px 40px 135px 419px
 		max-width: 1680px
 		height: 100vh
 		min-height: 530px 
-		+vertical
 		transition: height .3s
 		text-align: left
+		+vertical
 		&.is-fixed
 			position: fixed
 			top: 0
@@ -79,7 +84,6 @@
 	&__wrap
 		position: relative
 		width: 100%
-		max-width: 1078px
 		z-index: 3
 		text-align: left
 		vertical-align: middle

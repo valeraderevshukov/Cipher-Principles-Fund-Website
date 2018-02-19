@@ -2,11 +2,12 @@ import { WIN, BODY, FIXED, HTMLBODY } from './../_constants';
 import sections from './_sections';
 import stickySidebar from './_sticky-sidebar';
 import { SCROLL_WIDTH } from './_scrollWidth';
-import { SCROLL_TO } from './../_utils';
+import { SCROLL_TO, TOUCH } from './../_utils';
 import EVENT from './../communication/_events';
 import OBSERVER from './../communication/_observer';
 
 const startTrigger = '.js-start-anim-trigger';
+window.scrollFlug = true;
 export const startAnimPage = (props) => {
   const page = $('.js-anim-page');
   const topicWrap = $('.js-topic-wrap');
@@ -30,6 +31,7 @@ export const startAnimPage = (props) => {
     }, 0)
     .add( topicWrapAnim, 0 )
     .eventCallback( 'onComplete', () => {
+      window.scrollFlug = false;
       page.addClass(clearTransform);
       BODY.removeClass(FIXED);
       BODY.css({ paddingRight: 0});
@@ -62,6 +64,7 @@ export const finishAnimPage = () => {
         ease: Power1.easeInOut
       }, 0)
       .eventCallback( 'onComplete', () => {
+        window.scrollFlug = true;
         if (scrollWidth > 0) {
           BODY.css({ paddingRight: scrollWidth });
           headerAnim.css({ right: scrollWidth });
@@ -93,3 +96,26 @@ const shownHeader = () => {
 };
 
 WIN.on('scroll', shownHeader);
+
+const animationToSwipeDown = () => {
+  let yDown;
+  let yUp;
+  const topic = $('.js-topic');
+  let timeout;
+  BODY.on('mousewheel', function(event) {
+    if (!event.originalEvent.wheelDelta >= 0 && window.scrollFlug) {
+      window.scrollFlug = false;
+      $(startTrigger).trigger('click');
+    }
+  });
+  if (!TOUCH()) return;
+  topic
+    .on('mousedown touchstart', function(e) {
+      yDown = e.pageY;
+    })
+    .on('mouseup touchend',function(e) {
+      yUp = e.pageY;
+      if (yDown > yUp && window.scrollFlug) $(startTrigger).trigger('click');
+    });
+};
+animationToSwipeDown();

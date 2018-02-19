@@ -3,7 +3,7 @@ class SplitIntoRows {
 
   constructor(props) {
     this._container = props.container;
-    this._text = props.container.textContent;
+    this._text = props.container.innerHTML;
     this._init();
   }
 
@@ -25,9 +25,9 @@ class SplitIntoRows {
       let word = words[i];
       let editedWord = (word + ' ');
       //caching old text value for new line
-      let oldTextValue = rowInner.textContent;
+      let oldTextValue = rowInner.innerHTML;
       //set new text value (add new word)
-      rowInner.textContent += editedWord;
+      rowInner.innerHTML += editedWord;
 
       //if row width with new word bigger then parent width
       //create line with text value minus current word
@@ -36,14 +36,14 @@ class SplitIntoRows {
         newLine.setAttribute('data-stagger', 'wrap');
         let newLineInner = document.createElement('span');
         newLineInner.setAttribute('data-stagger', 'inner');
-        newLineInner.textContent = oldTextValue;
+        newLineInner.innerHTML = oldTextValue;
         newLine.appendChild(newLineInner);
         container.insertBefore(newLine, row);
         //reset row text value to current words with space
-        rowInner.textContent = editedWord;
+        rowInner.innerHTML = editedWord;
 
         //remove if line is empty
-        if (!newLine.textContent.length) newLine.remove();
+        if (!newLine.innerHTML.length) newLine.remove();
       }
       //if it's last word - remove white space and use this span for last line
       if (i === wordsLength - 1) {
