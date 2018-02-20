@@ -37,14 +37,11 @@ title: Company
 				</div>
 				<div class="company__diagramm js-company-diagramm">
 					<div class="company__logo">
-						<img src="img/diagramm-logo.svg" alt="Cipher Principles Fund">
+						<div>
+							<img src="img/diagramm-logo.svg" alt="Cipher Principles Fund">
+						</div>
 					</div>
 					{% include 'partials/_diagramm.html' %}
-				</div>
-				<div class="company__dots js-company-dots">
-					<span class="js-company-bullet is-active"></span>
-					<span class="js-company-bullet"></span>
-					<span class="js-company-bullet"></span>
 				</div>
 				<div class="company__slider js-company-slider">
 					{% for item in [
@@ -78,6 +75,11 @@ title: Company
 							</div>
 						</div>
 					{% endfor %}
+				</div>
+				<div class="company__dots js-company-dots">
+					<span class="js-company-bullet is-active"></span>
+					<span class="js-company-bullet"></span>
+					<span class="js-company-bullet"></span>
 				</div>
 			</div>
 		</div>

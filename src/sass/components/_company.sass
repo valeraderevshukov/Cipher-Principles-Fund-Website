@@ -32,6 +32,24 @@
 			max-width: 600px
 		+md 
 			max-width: 100%
+	&__slider
+		position: relative
+		+md 
+			margin-top: -360px
+			margin-left: -80px
+			margin-right: -20px
+		&:before
+			content: ''
+			position: absolute
+			z-index: 20
+			top: 360px
+			right: 0
+			bottom: 0
+			display: none
+			width: 70px
+			background-image: linear-gradient(right, $white 0%, rgba($white, 0) 100%)
+			+md 
+				display: block
 	&__slide
 		position: relative
 		padding-top: 100px
@@ -42,13 +60,13 @@
 		+clr
 		+vertical
 		+md 
-			padding: 0 0 40px
+			padding: 380px 20px 20px
 			height: auto
 			min-height: auto
 		&[data-id="1"]
 			padding-top: 300px
 			+md 
-				padding-top: 0
+				padding-top: 380px
 			.company__subtitle
 				margin-bottom: 20px
 			.company__inner
@@ -92,6 +110,7 @@
 			position: relative !important
 			top: auto !important
 			right: auto !important
+			padding-bottom: 20px
 			opacity: 1
 			text-align: center
 			// pointer-events: none
@@ -139,8 +158,8 @@
 		opacity: 0
 		white-space: nowrap
 		+vertical
-		transform: translate3d(0,0,0) scale(1)
-		transition: transform 0.5s, padding 0.5s
+		transition: padding 0.5s
+		+gpu
 		+md
 			position: relative !important
 			top: auto !important
@@ -150,17 +169,16 @@
 			width: 100%
 			max-width: 360px
 			height: auto
-			transform: translate3d(0,0,0) scale(1)
 		&.is-fixed
 			position: fixed
 		&.is-active 
 			padding-top: 130px
-			transform: translate3d(0,0,0) scale(1)
 			+md
 				padding-top: 0
-				transform: translate3d(0,0,0) scale(1)
 			[data-diagramm-inner]
 				opacity: 1
+			[data-diagramm-inner-text]
+				transform: rotate(0)
 			.company__logo
 				padding-top: 130px
 				// padding-top: 40px
@@ -182,6 +200,10 @@
 			transition: opacity 0.5s
 			+md 
 				opacity: 1
+		[data-diagramm-inner-text]
+			transform: rotate(10deg)
+			transform-origin: center
+			transition: transform 0.5s
 		[data-diagramm-head]
 			opacity: 0
 			transition: opacity 0.5s, transform 0.5s
@@ -204,13 +226,16 @@
 		right: 0
 		bottom: 0
 		padding: 330px 40px 30px
-		+vertical
 		white-space: nowrap
 		+gpu
 		transition: padding 0.5s
 		pointer-events: none
 		+md 
 			padding-top: 40px
+		div
+			width: 100%
+			height: 100%
+			+vertical
 		img 
 			display: inline-block
 			vertical-align: middle
@@ -219,3 +244,7 @@
 			+md 
 				max-width: 40%
 				max-height: 20%
+	[data-anim-from="bottom"]
+		+md 
+			opacity: 1
+			+gpu

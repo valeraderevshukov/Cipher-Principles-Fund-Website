@@ -61,8 +61,10 @@ export default {
           .slick({
             infinite: false,
             arrows: false,
-            fade: true,
-            adaptiveHeight: true
+            // fade: true,
+            adaptiveHeight: true,
+            centerMode: true,
+            centerPadding: '60px'
           })
           .on('beforeChange', (e, slick, prev, next) => {
             const step = 360/3;
@@ -109,7 +111,7 @@ export default {
       if (id === 0 && winTop < slideTop + slideHeight/2) diagramm.removeClass(ACTIVE);
 
 
-      if (id >= 1 && winTop > slideTop - slideHeight/2) {
+      if (id >= 1 && winTop > slideTop - slideHeight/2 && winTop <= slideTop + slideHeight/2 && !GET_WINDOW_WIDTH(widthMD)) {
         const step = 360/3;
         const angle = step*(id-1);
         diagramm
@@ -123,7 +125,7 @@ export default {
             y: 0,
             ease: Expo.easeOut
           }, '0.2');
-        slide.get(0).wasAnimatied = true;
+        if (!slide.get(0).wasAnimatied) slide.get(0).wasAnimatied = true;
       }
     };
 
