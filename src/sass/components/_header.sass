@@ -29,6 +29,8 @@
 			background-color: $blue 
 	&.is-fixed
 		position: fixed
+	[data-anim-page="full"] &
+		z-index: 103
 	[data-scroll-page="inner"] &
 		.is-show-inner-header &
 			transform: translateY(0)
@@ -44,6 +46,7 @@
 	&_anim,
 	&_in
 		color: $white 
+		z-index: 103
 		background-color: transparent
 		&:before
 			display: none
