@@ -109,8 +109,8 @@ const animationToSwipeDown = () => {
     }
   });
   if (!TOUCH()) return;
-  topic
-    .on('mousedown touchstart', function(e) {
+  BODY
+    .on('mousedown touchstart', '.js-topic', function(e) {
       yDown = e.pageY;
     })
     .on('mouseup touchend',function(e) {
