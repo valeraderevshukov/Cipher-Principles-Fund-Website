@@ -3,6 +3,7 @@ const path = require('path');
 const util = require('gulp-util');
 const config = require('./gulp/config');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 function createConfig(env) {
   let isProduction,
@@ -95,11 +96,7 @@ function createConfig(env) {
       new webpack.LoaderOptionsPlugin({
         minimize: true,
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-      })
+      new UglifyJSPlugin()
     );
   }
 

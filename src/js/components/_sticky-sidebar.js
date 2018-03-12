@@ -1,4 +1,4 @@
-import stickySidebar from 'sticky-sidebar';
+import StickySidebar from 'sticky-sidebar';
 import {WIN, ACTIVE, BODY} from './../_constants';
 import {SCROLL_TO} from './../_utils';
 import EVENT from './../communication/_events';
@@ -12,7 +12,6 @@ const blockItem = $('[data-section]');
 const linkPosition = (link, line) => {
   const linkPosition = link.position().top;
   const linkHeight = link.outerHeight()/2;
-  const lineHeight = line.outerHeight()/2;
 
   line.css('transform', `translate3d(0,${linkPosition + linkHeight - lineHeight}px,0)`);
 };
