@@ -12,6 +12,7 @@ const blockItem = $('[data-section]');
 const linkPosition = (link, line) => {
   const linkPosition = link.position().top;
   const linkHeight = link.outerHeight()/2;
+  const lineHeight = line.outerHeight()/2;
 
   line.css('transform', `translate3d(0,${linkPosition + linkHeight - lineHeight}px,0)`);
 };
