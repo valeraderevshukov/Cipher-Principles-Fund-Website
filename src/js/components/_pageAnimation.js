@@ -121,13 +121,16 @@ const animationToSwipeDown = () => {
     }
   });
   if (!TOUCH()) return;
+  let touch;
   BODY
-    .on('mousedown touchstart', '.js-topic', function(e) {
-      yDown = e.pageY;
+    .on('mousedown touchstart touchmove', function(e) {
+      if (e.originalEvent.touches) touch = e.originalEvent.touches[0];
+      yDown = e.pageY || touch.pageY;
     })
-    .on('mouseup touchend',function(e) {
-      yUp = e.pageY;
-      if (yDown > yUp && window.scrollFlug) $(startTrigger).trigger('click');
+    .on('mouseup touchend touchmove', '.js-topic', function(e) {
+      if (e.originalEvent.touches) touch = e.originalEvent.touches[0];
+      yUp = e.pageY || touch.pageY;
+      if (yDown >= yUp && window.scrollFlug) $(startTrigger).trigger('click');
     });
 };
 animationToSwipeDown();
