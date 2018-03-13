@@ -111,7 +111,7 @@ const animationToSwipeDown = () => {
       window.scrollFlug = false;
       $(startTrigger).trigger('click');
     } 
-    else if (iCurScrollPos === 0 && event.originalEvent.wheelDelta >= 0 && window.scrollUpFlug) {
+    else if (iCurScrollPos === 0 && event.originalEvent.wheelDelta >= 0 && window.scrollUpFlug && $('[data-namespace="home"]').length) {
       window.scrollUpFlug = false;
       $(pageBack).trigger('click');
       // clearTimeout(timeout);
