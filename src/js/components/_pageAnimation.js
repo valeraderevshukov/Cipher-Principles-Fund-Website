@@ -32,11 +32,12 @@ export const startAnimPage = (props) => {
     .add( topicWrapAnim, 0 )
     .eventCallback( 'onComplete', () => {
       window.scrollFlug = false;
+      window.scrollUpFlug = true;
       page.addClass(clearTransform);
       BODY.removeClass(FIXED);
       BODY.css({ paddingRight: 0});
       // sections.show();
-      WIN.trigger('scroll');
+      // WIN.trigger('scroll');
       // stickySidebar.init();
       headerAnim.css({ right: 0});
       OBSERVER.ON_FIRE(EVENT.TOPIC_ANIM_COMPLATE);
@@ -65,6 +66,7 @@ export const finishAnimPage = () => {
       }, 0)
       .eventCallback( 'onComplete', () => {
         window.scrollFlug = true;
+        window.scrollUpFlug = false;
         if (scrollWidth > 0) {
           BODY.css({ paddingRight: scrollWidth });
           headerAnim.css({ right: scrollWidth });
@@ -97,15 +99,25 @@ const shownHeader = () => {
 
 WIN.on('scroll', shownHeader);
 
+window.scrollUpFlug = false;
 const animationToSwipeDown = () => {
   let yDown;
   let yUp;
   const topic = $('.js-topic');
-  let timeout;
+  // let timeout;
   BODY.on('mousewheel', function(event) {
-    if (!event.originalEvent.wheelDelta >= 0 && window.scrollFlug) {
+    const iCurScrollPos = $(window).scrollTop();
+    if (event.originalEvent.wheelDelta <= 0 && window.scrollFlug) {
       window.scrollFlug = false;
       $(startTrigger).trigger('click');
+    } 
+    else if (iCurScrollPos === 0 && event.originalEvent.wheelDelta >= 0 && window.scrollUpFlug) {
+      window.scrollUpFlug = false;
+      $(pageBack).trigger('click');
+      // clearTimeout(timeout);
+      // timeout = setTimeout(() => {
+        
+      // }, 100);
     }
   });
   if (!TOUCH()) return;
